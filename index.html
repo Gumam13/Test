@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Strukly.co – Smart POS for F&B and Retail</title>
   <meta name="description" content="All-in-one POS for F&B & Retail outlets. Payments, orders, and automated reporting. Free 14-day trial!">
+  <link rel="icon" type="image/png" href="logo.png"> <!-- FAVICON/LOGO -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;900&display=swap" rel="stylesheet">
   <style>
     body {
@@ -13,27 +14,80 @@
       background: #f6f8fa;
       color: #21254a;
     }
+    /* --- STICKY NAVBAR --- */
+    .main-navbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: radial-gradient(ellipse at 30% 50%, #222028 60%, #1a171c 120%);
+      padding: 0;
+      min-height: 62px;
+      border-bottom: 1px solid #231a1a2b;
+      box-shadow: 0 1.5px 8px #0002;
+    }
+    .nav-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 7px 24px 7px 24px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-logo img {
+      height: 30px;
+      margin-right: 2px;
+    }
+    .nav-logo-text {
+      font-weight: 700;
+      font-size: 1.18em;
+      color: #fff;
+      letter-spacing: 1px;
+      margin-left: 3px;
+    }
+    .nav-logo-text span {
+      color: #f5a623;
+    }
+    .nav-menu {
+      display: flex;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .nav-menu li {
+      display: inline-block;
+    }
+    .nav-menu a {
+      color: #e2e2e2;
+      font-size: 1em;
+      font-weight: 500;
+      padding: 7px 16px;
+      border-radius: 13px;
+      text-decoration: none;
+      transition: background 0.18s, color 0.18s;
+      letter-spacing: 0.03em;
+      position: relative;
+      outline: none;
+      border: none;
+    }
+    .nav-menu a.active,
+    .nav-menu a:focus,
+    .nav-menu a:hover {
+      background: #353036;
+      color: #fff;
+      font-weight: 700;
+    }
+    /* --- END NAVBAR --- */
+
     .container {
       max-width: 1100px;
       margin: 0 auto;
       padding: 0 24px;
-    }
-    header {
-      padding: 28px 0 0 0;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .logo img {
-      height: 40px;
-      vertical-align: middle;
-    }
-    .logo-text {
-      font-weight: 700;
-      font-size: 1.3em;
-      color: #2b63f5;
-      letter-spacing: 1px;
-      margin-left: 6px;
     }
 
     /* Hero Section */
@@ -55,7 +109,14 @@
       margin: 0 0 32px 0;
       line-height: 1.5;
     }
-    .hero .cta-main {
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+    .cta-main {
       background: linear-gradient(90deg, #265ae8 60%, #3d74fa 100%);
       color: #fff;
       font-size: 1.13em;
@@ -68,11 +129,39 @@
       text-decoration: none;
       transition: background 0.18s, box-shadow 0.2s;
       display: inline-block;
-      margin-bottom: 18px;
     }
-    .hero .cta-main:hover {
+    .cta-main:hover {
       background: linear-gradient(90deg, #214dbd 60%, #265ae8 100%);
       box-shadow: 0 6px 22px #b6cdfd;
+    }
+    .cta-learn {
+      background: none;
+      color: #2957b5;
+      font-size: 1.13em;
+      font-weight: 700;
+      border: 2px solid #2957b5;
+      padding: 18px 44px;
+      border-radius: 28px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.18s, color 0.18s, border 0.18s;
+      display: inline-block;
+    }
+    .cta-learn:hover {
+      background: #2957b5;
+      color: #fff;
+      border-color: #2957b5;
+    }
+    .users {
+      color: #3a4e8a;
+      background: #e5f0ff;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 1.08em;
+      margin: 22px 0 0 0;
+      display: inline-block;
+      font-weight: 600;
+      letter-spacing: 0.01em;
     }
 
     /* Features Grid */
@@ -170,17 +259,7 @@
     .plan .cta:hover {
       background: linear-gradient(90deg, #214dbd 60%, #265ae8 100%);
     }
-    .users {
-      color: #3a4e8a;
-      background: #e5f0ff;
-      padding: 8px 18px;
-      border-radius: 8px;
-      font-size: 1.08em;
-      margin: 22px 0 0 0;
-      display: inline-block;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-    }
+
     .links-below {
       margin: 30px 0 10px 0;
       text-align: center;
@@ -273,6 +352,7 @@
       .plans { flex-direction: column; gap: 24px; }
       .plan { max-width: 420px; margin: 0 auto 24px auto; }
       .feature-list { grid-template-columns:1fr; }
+      .hero-buttons { flex-direction: column; gap: 10px;}
     }
     @media (max-width: 800px) {
       .footer-container {
@@ -283,6 +363,11 @@
       .footer-col {
         margin-bottom: 24px;
       }
+      .nav-content { padding: 7px 8px 7px 8px;}
+      .main-navbar { min-height: 52px; }
+      .nav-logo-text { font-size: 1em; }
+      .nav-menu { gap: 4px; }
+      .nav-menu a { font-size: 0.98em; padding: 7px 9px;}
     }
     @media (max-width: 600px) {
       .container { padding: 0 10px;}
@@ -292,13 +377,26 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="logo">
+
+  <!-- STICKY NAV HEADER -->
+  <nav class="main-navbar">
+    <div class="nav-content">
+      <div class="nav-logo">
         <img src="logo.png" alt="Strukly Logo" />
-        <span class="logo-text">strukly<span style="color:#f5a623;">.co</span></span>
+        <span class="nav-logo-text">strukly<span style="color:#f5a623;">.co</span></span>
       </div>
-    </header>
+      <ul class="nav-menu">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- END NAV HEADER -->
+
+  <div class="container">
 
     <!-- HERO SECTION -->
     <section class="hero">
@@ -307,7 +405,10 @@
         <b>Strukly</b> helps F&B and retail manage orders, print receipts instantly, and monitor sales—without the hassle.<br>
         <span style="color:#488;">One platform for all your outlets, ready to use in minutes.</span>
       </div>
-      <a href="#pricing" class="cta-main">Start 14-Day Free Trial</a>
+      <div class="hero-buttons">
+        <a href="#pricing" class="cta-main">Start 14-Day Free Trial</a>
+        <a href="#features" class="cta-learn">Learn More</a>
+      </div>
       <div class="users">Trusted by: Vapebay, Drinkology</div>
     </section>
 
