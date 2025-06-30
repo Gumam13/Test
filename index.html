@@ -5,70 +5,158 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Strukly.co – Smart POS for F&B and Retail</title>
   <meta name="description" content="All-in-one POS for F&B & Retail outlets. Payments, orders, and automated reporting. Free 14-day trial!">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;900&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Inter', Arial, sans-serif; margin:0; background: #f8fafc; color:#222; }
-    .container { max-width: 760px; margin: 0 auto; padding: 24px; }
-    header { display:flex; justify-content:space-between; align-items:center; padding: 16px 0; }
-    .logo { display: flex; align-items: center; gap: 10px; }
-    .logo img { height: 38px; }
-    .logo-text { font-weight: 700; font-size: 1.4em; color:#2b63f5; letter-spacing: 1px;}
-    .cta { background: #2b63f5; color: #fff; padding: 12px 30px; border: none; border-radius: 8px; font-size:1em; font-weight:600; text-decoration:none; transition: background 0.2s;}
-    .cta:hover { background:#1c47c2;}
-    h1 { font-size:2.2em; font-weight:700; margin-top:20px;}
-    .sub { font-size:1.2em; color:#556; margin-bottom:24px; }
-    .feature-list { display:grid; grid-template-columns:1fr 1fr; gap: 18px; margin: 34px 0 32px 0;}
-    .feature { background: #fff; border-radius: 10px; box-shadow:0 2px 8px #eee; padding:18px 14px; font-size:1em;}
-    .users { color:#222; font-size:1em; background:#e5f0ff; padding:8px 12px; border-radius:6px; margin-bottom:18px;}
-    footer { font-size:0.95em; color:#999; text-align:center; margin:28px 0 10px 0;}
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      margin: 0;
+      background: #f6f8fa;
+      color: #21254a;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    header {
+      padding: 28px 0 0 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo img {
+      height: 40px;
+      vertical-align: middle;
+    }
+    .logo-text {
+      font-weight: 700;
+      font-size: 1.3em;
+      color: #2b63f5;
+      letter-spacing: 1px;
+      margin-left: 6px;
+    }
 
-    /* PRICING CARD FIXED STYLE */
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 68px 0 32px 0;
+    }
+    .hero h1 {
+      font-size: 2.8em;
+      font-weight: 900;
+      margin: 0 0 16px 0;
+      letter-spacing: -1.2px;
+      color: #1c2246;
+    }
+    .hero .sub {
+      color: #39406e;
+      font-size: 1.25em;
+      font-weight: 500;
+      margin: 0 0 32px 0;
+      line-height: 1.5;
+    }
+    .hero .cta-main {
+      background: linear-gradient(90deg, #265ae8 60%, #3d74fa 100%);
+      color: #fff;
+      font-size: 1.13em;
+      font-weight: 700;
+      border: none;
+      padding: 18px 44px;
+      border-radius: 28px;
+      cursor: pointer;
+      box-shadow: 0 3px 16px #dde8fd;
+      text-decoration: none;
+      transition: background 0.18s, box-shadow 0.2s;
+      display: inline-block;
+      margin-bottom: 18px;
+    }
+    .hero .cta-main:hover {
+      background: linear-gradient(90deg, #214dbd 60%, #265ae8 100%);
+      box-shadow: 0 6px 22px #b6cdfd;
+    }
+
+    /* Features Grid */
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+      margin: 56px 0 62px 0;
+    }
+    .feature {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 2px 16px #ecf1fc;
+      padding: 30px 18px 22px 18px;
+      font-size: 1.07em;
+      min-height: 110px;
+      font-weight: 500;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: #253261;
+    }
+
+    /* Pricing Section */
+    .pricing-section {
+      padding: 10px 0 32px 0;
+      text-align: center;
+    }
+    .pricing-section h2 {
+      font-size: 2em;
+      font-weight: 700;
+      margin-bottom: 36px;
+      color: #24306b;
+    }
     .plans {
       display: flex;
-      gap: 32px;
-      margin: 38px 0;
+      gap: 40px;
       justify-content: center;
       align-items: stretch;
+      flex-wrap: wrap;
     }
     .plan {
       background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 2px 16px #e7eaf3;
-      padding: 32px 26px 26px 26px;
+      border-radius: 20px;
+      box-shadow: 0 3px 22px #e2e9fb;
+      padding: 36px 34px 32px 34px;
+      min-width: 270px;
+      max-width: 330px;
+      width: 100%;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      max-width: 340px;
-      min-width: 240px;
-      width: 100%;
-      transition: box-shadow 0.18s, transform 0.12s;
+      transition: box-shadow 0.18s, transform 0.14s;
       position: relative;
+      margin-bottom: 22px;
     }
     .plan:hover {
-      box-shadow: 0 8px 28px #d0d7e8;
-      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 8px 32px #bdd0fa;
+      transform: translateY(-5px) scale(1.025);
     }
     .plan h3 {
-      margin: 0 0 16px 0;
-      font-size: 1.18em;
-      font-weight: 700;
+      margin: 0 0 19px 0;
+      font-size: 1.25em;
+      font-weight: 800;
+      color: #2957b5;
+      letter-spacing: 0.01em;
     }
     .plan ul {
       text-align: left;
       padding-left: 18px;
-      margin: 0 0 32px 0;
-      font-size: 1em;
+      margin: 0 0 34px 0;
+      font-size: 1.08em;
       flex: 1 1 auto;
+      color: #242b54;
     }
     .plan .cta {
       width: 100%;
       text-align: center;
       background: linear-gradient(90deg, #265ae8 60%, #3d74fa 100%);
       border: none;
-      border-radius: 8px;
-      font-size: 1em;
-      font-weight: 600;
-      padding: 13px 0;
+      border-radius: 9px;
+      font-size: 1.08em;
+      font-weight: 700;
+      padding: 14px 0;
       margin-top: auto;
       margin-bottom: 0;
       box-shadow: 0 2px 8px #e0e7ef;
@@ -82,18 +170,38 @@
     .plan .cta:hover {
       background: linear-gradient(90deg, #214dbd 60%, #265ae8 100%);
     }
-    @media (max-width: 800px) {
-      .plans {
-        flex-direction: column;
-        align-items: center;
-      }
-      .plan {
-        width: 100%;
-        max-width: 420px;
-        margin-bottom: 24px;
-      }
+    .users {
+      color: #3a4e8a;
+      background: #e5f0ff;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 1.08em;
+      margin: 22px 0 0 0;
+      display: inline-block;
+      font-weight: 600;
+      letter-spacing: 0.01em;
     }
-    a { color:#2b63f5; text-decoration:underline;}
+    footer {
+      font-size:0.98em; color:#999; text-align:center; margin:38px 0 12px 0;
+    }
+    .links-below {
+      margin: 30px 0 10px 0;
+      text-align: center;
+      font-size: 1.06em;
+    }
+    .links-below a { color:#2b63f5; text-decoration:underline; margin:0 5px; }
+
+    @media (max-width: 900px) {
+      .container { max-width: 98vw; }
+      .plans { flex-direction: column; gap: 24px; }
+      .plan { max-width: 420px; margin: 0 auto 24px auto; }
+      .feature-list { grid-template-columns:1fr; }
+    }
+    @media (max-width: 600px) {
+      .container { padding: 0 10px;}
+      .hero { padding: 38px 0 20px 0; }
+      .feature { padding: 22px 10px 18px 10px;}
+    }
   </style>
 </head>
 <body>
@@ -103,56 +211,62 @@
         <img src="logo.png" alt="Strukly Logo" />
         <span class="logo-text">strukly<span style="color:#f5a623;">.co</span></span>
       </div>
-      <a href="#pricing" class="cta">Start Free Trial</a>
     </header>
 
-    <h1>Manage Outlets, No Hassle. One POS for All.</h1>
-    <div class="sub">
-      A fast, modern solution for F&amp;B & Retail: orders, payments, and automated reporting in a single platform.  
-      <br><b>Perfect for: Cafés, restaurants, bars, retail stores, modern kiosks</b>
-    </div>
-    <a href="YOUR_STRIPE_CHECKOUT_LINK_HERE" class="cta" style="margin:12px 0 22px 0;display:inline-block;">Start 14-Day Free Trial</a>
-    <div class="users">Trusted by: Vapebay, Drinkology</div>
-    
-    <h2>Top Features</h2>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <h1>POS & QR Payment for Modern Outlets</h1>
+      <div class="sub">
+        <b>Strukly</b> helps F&B and retail manage orders, print receipts instantly, and monitor sales—without the hassle.<br>
+        <span style="color:#488;">One platform for all your outlets, ready to use in minutes.</span>
+      </div>
+      <a href="#pricing" class="cta-main">Start 14-Day Free Trial</a>
+      <div class="users">Trusted by: Vapebay, Drinkology</div>
+    </section>
+
+    <!-- FEATURES GRID -->
     <div class="feature-list">
-      <div class="feature">✅ QR Payment at POS<br><span style="color:#666;">Auto-validation, instant receipt printing.</span></div>
-      <div class="feature">📊 Realtime Dashboard<br><span style="color:#666;">Monitor sales & outlet performance anytime.</span></div>
-      <div class="feature">🍳 Kitchen Screen<br><span style="color:#666;">Orders automatically sent to kitchen.</span></div>
-      <div class="feature">📧 Email Closing Summary<br><span style="color:#666;">Automated daily report sent every night.</span></div>
-      <div class="feature">🎁 Membership Loyalty<br><span style="color:#666;">Earn points & repeat orders from your customers.</span></div>
-      <div class="feature">📦 Show Product Qty in POS<br><span style="color:#666;">Transparent, instantly know remaining stock.</span></div>
-      <div class="feature">🔐 Approval OTP via Email<br><span style="color:#666;">Extra security during cashier closing.</span></div>
-      <div class="feature">💳 Change Payment Without Refund<br><span style="color:#666;">Efficient, no complicated refund process.</span></div>
-      <div class="feature">💸 Promo Based on Payment Method<br><span style="color:#666;">Special discounts for selected payment methods.</span></div>
-      <div class="feature">🖥️ Customer Display Promo Slider<br><span style="color:#666;">Show promos on customer-facing screen.</span></div>
-      <div class="feature">🔗 QR Order + Auto QRIS Payment<br><span style="color:#666;">Order goes straight to kitchen, no cashier needed.</span></div>
-      <div class="feature">🎂 Birthday Promo<br><span style="color:#666;">Lifetime birthday gift, system-verified.</span></div>
+      <div class="feature">✅ <div><b>QR Payment at POS</b><br><span style="color:#666;">Auto-validation, instant receipt printing.</span></div></div>
+      <div class="feature">📊 <div><b>Realtime Dashboard</b><br><span style="color:#666;">Monitor sales & outlets anytime, anywhere.</span></div></div>
+      <div class="feature">🍳 <div><b>Kitchen Screen</b><br><span style="color:#666;">Orders go straight to the kitchen automatically.</span></div></div>
+      <div class="feature">📧 <div><b>Email Closing Summary</b><br><span style="color:#666;">Automated reports sent every night.</span></div></div>
+      <div class="feature">🎁 <div><b>Membership Loyalty</b><br><span style="color:#666;">Increase points & repeat orders.</span></div></div>
+      <div class="feature">📦 <div><b>Show Product Qty in POS</b><br><span style="color:#666;">Know remaining stock instantly.</span></div></div>
+      <div class="feature">🔐 <div><b>Approval OTP via Email</b><br><span style="color:#666;">Extra security when closing cashier.</span></div></div>
+      <div class="feature">💳 <div><b>Change Payment Without Refund</b><br><span style="color:#666;">Efficient, no complicated process.</span></div></div>
+      <div class="feature">💸 <div><b>Promo Based on Payment Method</b><br><span style="color:#666;">Special discounts for selected payments.</span></div></div>
+      <div class="feature">🖥️ <div><b>Customer Display Promo Slider</b><br><span style="color:#666;">Show promos on the customer screen.</span></div></div>
+      <div class="feature">🔗 <div><b>QR Order + Auto QRIS Payment</b><br><span style="color:#666;">Orders go to kitchen, no cashier needed.</span></div></div>
+      <div class="feature">🎂 <div><b>Birthday Promo</b><br><span style="color:#666;">One-time birthday gift, system verified.</span></div></div>
     </div>
-    
-    <h2 id="pricing">Choose Your Plan</h2>
-    <div class="plans">
-      <div class="plan">
-        <h3>Basic</h3>
-        <ul>
-          <li>POS & QR Payment</li>
-          <li>Email Closing Summary</li>
-          <li>Show Product Qty in POS</li>
-        </ul>
-        <a href="YOUR_STRIPE_CHECKOUT_LINK_BASIC" class="cta">Select Basic</a>
+
+    <!-- PRICING SECTION -->
+    <section class="pricing-section" id="pricing">
+      <h2>Choose Your Plan</h2>
+      <div class="plans">
+        <div class="plan">
+          <h3>Basic</h3>
+          <ul>
+            <li>POS & QR Payment</li>
+            <li>Email Closing Summary</li>
+            <li>Show Product Qty in POS</li>
+          </ul>
+          <a href="YOUR_STRIPE_CHECKOUT_LINK_BASIC" class="cta">Select Basic</a>
+        </div>
+        <div class="plan">
+          <h3>Advanced</h3>
+          <ul>
+            <li>All Basic features</li>
+            <li>Kitchen Screen & Loyalty</li>
+            <li>Promo, OTP Approval, Customer Display</li>
+          </ul>
+          <a href="YOUR_STRIPE_CHECKOUT_LINK_ADVANCED" class="cta">Select Advanced</a>
+        </div>
       </div>
-      <div class="plan">
-        <h3>Advanced</h3>
-        <ul>
-          <li>All Basic features</li>
-          <li>Kitchen Screen & Loyalty</li>
-          <li>Promo, OTP Approval, Customer Display</li>
-        </ul>
-        <a href="YOUR_STRIPE_CHECKOUT_LINK_ADVANCED" class="cta">Select Advanced</a>
-      </div>
-    </div>
-    <div style="margin:20px 0;text-align:center">
-      <a href="terms.html">Terms</a> • <a href="privacy.html">Privacy</a>
+    </section>
+
+    <div class="links-below">
+      <a href="/terms.html">Terms</a> • <a href="/privacy.html">Privacy</a>
     </div>
     <footer>
       &copy; 2025 Strukly.co &middot; PT Teknologi Inovasi Labs
