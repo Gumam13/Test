@@ -185,6 +185,44 @@
       color: #253261;
     }
 
+    /* BENEFITS SECTION */
+    .benefits-section {
+      text-align: center;
+      padding: 30px 0 35px 0;
+    }
+    .benefits-section h2 {
+      font-size: 2em;
+      font-weight: 700;
+      margin-bottom: 36px;
+      color: #24306b;
+    }
+    .benefits-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .benefit {
+      display: flex;
+      align-items: flex-start;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 2px 16px #ecf1fc;
+      padding: 24px 16px;
+      font-size: 1.08em;
+      gap: 16px;
+      text-align: left;
+    }
+    .benefit-emoji {
+      font-size: 2em;
+      line-height: 1;
+      margin-top: 2px;
+    }
+    @media (max-width: 800px) {
+      .benefits-list { grid-template-columns: 1fr; }
+    }
+
     /* Pricing Section */
     .pricing-section {
       padding: 10px 0 32px 0;
@@ -258,6 +296,41 @@
     }
     .plan .cta:hover {
       background: linear-gradient(90deg, #214dbd 60%, #265ae8 100%);
+    }
+
+    /* FAQ SECTION */
+    .faq-section {
+      text-align: center;
+      padding: 40px 0 35px 0;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .faq-section h2 {
+      font-size: 2em;
+      font-weight: 700;
+      margin-bottom: 36px;
+      color: #24306b;
+    }
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .faq-item {
+      background: #fff;
+      border-radius: 13px;
+      box-shadow: 0 2px 14px #e2e9fa;
+      padding: 20px 24px 18px 24px;
+      text-align: left;
+    }
+    .faq-q {
+      font-weight: 700;
+      color: #1a244d;
+      margin-bottom: 6px;
+    }
+    .faq-a {
+      color: #4d5274;
+      font-size: 1em;
     }
 
     .links-below {
@@ -428,6 +501,48 @@
       <div class="feature">🎂 <div><b>Birthday Promo</b><br><span style="color:#666;">One-time birthday gift, system verified.</span></div></div>
     </div>
 
+    <!-- BENEFITS SECTION -->
+    <section class="benefits-section" id="benefits">
+      <h2>Why Businesses Choose Strukly</h2>
+      <div class="benefits-list">
+        <div class="benefit">
+          <span class="benefit-emoji">🚀</span>
+          <div>
+            <b>Fast Setup, Zero Hassle</b><br>
+            Get your POS running in minutes—no installation or training needed.
+          </div>
+        </div>
+        <div class="benefit">
+          <span class="benefit-emoji">🔒</span>
+          <div>
+            <b>Secure & Reliable</b><br>
+            Your data and transactions are protected with industry-grade security.
+          </div>
+        </div>
+        <div class="benefit">
+          <span class="benefit-emoji">📈</span>
+          <div>
+            <b>Realtime Insights</b><br>
+            Instantly track sales, outlet performance, and inventory—anytime, anywhere.
+          </div>
+        </div>
+        <div class="benefit">
+          <span class="benefit-emoji">🤝</span>
+          <div>
+            <b>Customer Loyalty Growth</b><br>
+            Built-in points, repeat order, and birthday promo keep your customers coming back.
+          </div>
+        </div>
+        <div class="benefit">
+          <span class="benefit-emoji">💡</span>
+          <div>
+            <b>Flexible for F&B and Retail</b><br>
+            One solution for modern cafes, restaurants, kiosks, and retail outlets.
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- PRICING SECTION -->
     <section class="pricing-section" id="pricing">
       <h2>Choose Your Plan</h2>
@@ -452,6 +567,34 @@
         </div>
       </div>
     </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">How fast can I go live with Strukly?</div>
+          <div class="faq-a">You can be up and running in minutes. Just sign up, set up your outlets and products, and start using Strukly immediately.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do I need any special hardware?</div>
+          <div class="faq-a">No. Strukly works on any browser and most devices (laptop, tablet, POS terminal). For receipt printing, just connect any standard receipt printer.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can I use my own QRIS for payments?</div>
+          <div class="faq-a">Yes! Strukly is compatible with QRIS and supports instant validation for seamless customer payment experiences.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What happens after the free trial?</div>
+          <div class="faq-a">You can choose a plan and continue using all your data and settings—no disruption. If you don’t upgrade, your data is safe and can be exported anytime.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Is there a support team if I need help?</div>
+          <div class="faq-a">Absolutely. Our helpdesk is ready to support you by email or WhatsApp, including onboarding and troubleshooting.</div>
+        </div>
+      </div>
+    </section>
+
     <div class="links-below">
       <a href="/terms.html">Terms</a> • <a href="/privacy.html">Privacy</a>
     </div>
