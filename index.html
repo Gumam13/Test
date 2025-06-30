@@ -181,9 +181,6 @@
       font-weight: 600;
       letter-spacing: 0.01em;
     }
-    footer {
-      font-size:0.98em; color:#999; text-align:center; margin:38px 0 12px 0;
-    }
     .links-below {
       margin: 30px 0 10px 0;
       text-align: center;
@@ -191,11 +188,101 @@
     }
     .links-below a { color:#2b63f5; text-decoration:underline; margin:0 5px; }
 
+    /* FOOTER VULNERSIGHT STYLE */
+    .footer-dark {
+      background: #18191b;
+      color: #ccc;
+      padding: 56px 0 0 0;
+      font-size: 1em;
+      margin-top: 60px;
+      letter-spacing: 0.01em;
+    }
+    .footer-container {
+      display: flex;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 32px;
+      gap: 44px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .footer-col {
+      flex: 1 1 230px;
+      margin-bottom: 34px;
+      min-width: 220px;
+    }
+    .footer-logo-text {
+      font-size: 1.35em;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 1px;
+      margin-bottom: 9px;
+      display: inline-block;
+    }
+    .footer-desc {
+      margin: 12px 0 0 0;
+      color: #e2e2e2;
+      font-size: 1em;
+      line-height: 1.5;
+    }
+    .footer-title {
+      font-weight: 700;
+      font-size: 1.05em;
+      color: #f5a623;
+      margin-bottom: 12px;
+    }
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-links li {
+      margin-bottom: 7px;
+    }
+    .footer-links a {
+      color: #8db4fc;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover {
+      color: #fff;
+    }
+    .footer-contact {
+      color: #ccc;
+      font-size: 0.99em;
+      line-height: 1.6;
+    }
+    .footer-contact a {
+      color: #8db4fc;
+      text-decoration: none;
+    }
+    .footer-contact a:hover {
+      color: #fff;
+    }
+    .footer-copyright {
+      border-top: 1px solid #24262d;
+      text-align: center;
+      color: #777;
+      font-size: 0.97em;
+      padding: 18px 0 16px 0;
+      margin-top: 14px;
+      letter-spacing: 0.01em;
+    }
     @media (max-width: 900px) {
       .container { max-width: 98vw; }
       .plans { flex-direction: column; gap: 24px; }
       .plan { max-width: 420px; margin: 0 auto 24px auto; }
       .feature-list { grid-template-columns:1fr; }
+    }
+    @media (max-width: 800px) {
+      .footer-container {
+        flex-direction: column;
+        gap: 8px;
+        padding: 0 12px;
+      }
+      .footer-col {
+        margin-bottom: 24px;
+      }
     }
     @media (max-width: 600px) {
       .container { padding: 0 10px;}
@@ -225,7 +312,7 @@
     </section>
 
     <!-- FEATURES GRID -->
-    <div class="feature-list">
+    <div class="feature-list" id="features">
       <div class="feature">✅ <div><b>QR Payment at POS</b><br><span style="color:#666;">Auto-validation, instant receipt printing.</span></div></div>
       <div class="feature">📊 <div><b>Realtime Dashboard</b><br><span style="color:#666;">Monitor sales & outlets anytime, anywhere.</span></div></div>
       <div class="feature">🍳 <div><b>Kitchen Screen</b><br><span style="color:#666;">Orders go straight to the kitchen automatically.</span></div></div>
@@ -264,29 +351,47 @@
         </div>
       </div>
     </section>
-
     <div class="links-below">
       <a href="/terms.html">Terms</a> • <a href="/privacy.html">Privacy</a>
     </div>
+  </div>
 
-    <!-- CONTACT & ADDRESS -->
-    <div class="contact-block">
-      <div class="contact-title">Contact</div>
-      <div>
-        <a href="mailto:info@strukly.co" class="contact-email">info@strukly.co</a>
+  <!-- FOOTER START -->
+  <footer class="footer-dark">
+    <div class="footer-container">
+      <div class="footer-col">
+        <div class="footer-logo-text">Strukly</div>
+        <div class="footer-desc">
+          Smart POS & QR Payment<br>
+          for F&B & Retail
+        </div>
       </div>
-      <div class="address-block">
-        <span class="address-title">Address</span>
-        <br>
-        <span class="address-detail">📍 Menara Rajawali 7th Floor,<br>
-        Jl. DR. Ide Anak Agung Gde Agung Lot #5.1, Kawasan Mega Kuningan,<br>
-        Jakarta Selatan, 12950</span>
+      <div class="footer-col">
+        <div class="footer-title">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-title">Contact</div>
+        <div class="footer-contact">
+          <div><a href="mailto:info@strukly.co">info@strukly.co</a></div>
+          <div>(+62) 819-1589-8999</div>
+          <div>
+            Menara Rajawali 7th Floor<br>
+            Jl. DR. Ide Anak Agung Gde Agung Lot #5.1<br>
+            Kawasan Mega Kuningan,<br>
+            Jakarta Selatan, 12950
+          </div>
+        </div>
       </div>
     </div>
-    <footer>
-      &copy; 2025 Strukly.co &middot; PT Teknologi Inovasi Labs
-    </footer>
-
-  </div>
+    <div class="footer-copyright">
+      &copy; 2025 Strukly.co | PT Teknologi Inovasi Labs
+    </div>
+  </footer>
+  <!-- FOOTER END -->
 </body>
 </html>
