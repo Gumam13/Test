@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
@@ -60,6 +60,7 @@
       padding: 0;
       list-style: none;
       margin-left: auto;
+      align-items: center;
     }
     .nav-menu li {
       display: inline-block;
@@ -80,6 +81,30 @@
       background: #353036;
       color: #fff;
       font-weight: 700;
+    }
+    .lang-dropdown-container {
+      margin-left: 15px;
+    }
+    .lang-dropdown {
+      background-color: #444;
+      color: #fff;
+      border: 1px solid #666;
+      border-radius: 5px;
+      padding: 6px 8px;
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 0.9em;
+      cursor: pointer;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22/%3E%3C/svg%3E');
+      background-repeat: no-repeat;
+      background-position: right 8px top 50%;
+      background-size: .65em auto;
+      padding-right: 28px;
+    }
+    .lang-dropdown:focus {
+        outline: 1px solid #f5a623;
     }
     .nav-burger {
       display: none;
@@ -102,6 +127,8 @@
         position: absolute;
         left: 0; top: 0;
         width: 100vw;
+        max-height: 90vh;
+        overflow-y: auto;
         background: rgba(21, 18, 33, 0.93);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
@@ -111,6 +138,7 @@
         align-items: center;
         box-shadow: 0 6px 32px #0b0e18bb;
         animation: fadeInMenu .22s;
+        border-radius: 0 0 22px 22px;
       }
       .nav-mobile-header {
         width: 100vw;
@@ -120,6 +148,7 @@
         min-height: 56px;
         padding: 14px 22px 0 16px;
         background: transparent;
+        flex-shrink: 0;
       }
       .nav-mobile-logo {
         display: flex;
@@ -147,7 +176,7 @@
         margin-left: auto;
       }
       .nav-mobile-list {
-        margin: 14px 0 14px 0;
+        margin: 14px 0;
         padding: 0;
         width: 100vw;
         display: flex;
@@ -181,10 +210,30 @@
         color: #f5a623;
         font-weight: 700;
       }
-      .nav-mobile-menu {
-        max-height: 370px;
-        border-radius: 0 0 22px 22px;
-        overflow: visible;
+      .nav-mobile-list .lang-switcher-mobile {
+        margin-top: 15px;
+        padding-bottom: 15px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+      .lang-switcher-mobile button {
+        background: transparent;
+        border: 1px solid rgba(255,255,255,0.5);
+        color: rgba(255,255,255,0.8);
+        width: 80px;
+        padding: 10px 0;
+        border-radius: 8px;
+        font-size: 1.08em;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.15s, color 0.15s, border-color 0.15s;
+      }
+      .lang-switcher-mobile button.active {
+        background: #f5a623;
+        border-color: #f5a623;
+        color: #222028;
+        font-weight: 700;
       }
       @keyframes fadeInMenu {
         from { opacity: 0; }
@@ -266,11 +315,88 @@
     }
     img[loading="lazy"] { filter: blur(0.02em); transition: filter .15s; }
     img[loading="lazy"]:not([src*="data:image"]) { filter: none; }
+    [lang="en"] { display: none; }
+    .faq-section {
+      max-width: 900px;
+      margin: 40px auto 0 auto;
+      font-family: 'Inter', Arial, sans-serif;
+      color: #21254a;
+    }
+    .faq-section h2 {
+      text-align: center;
+      font-size: 2em;
+      font-weight: 700;
+      margin-bottom: 36px;
+      color: #24306b;
+    }
+    .faq-accordion {
+      margin: 0 auto;
+    }
+    .faq-item-acc {
+      background: #fff;
+      border-radius: 13px;
+      box-shadow: 0 2px 14px #e2e9fa;
+      margin-bottom: 18px;
+      padding: 0;
+      color: #21254a;
+      transition: box-shadow 0.14s;
+    }
+    .faq-question-acc {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 28px 22px 22px;
+      font-size: 1.11em;
+      font-weight: 700;
+      border: none;
+      outline: none;
+      background: transparent;
+      width: 100%;
+      transition: background 0.12s;
+      border-radius: 13px;
+      text-align: left;
+      color: #24306b;
+    }
+    .faq-question-acc:hover {
+      background: #e5f0ff;
+    }
+    .faq-icon {
+      font-size: 1.8em;
+      font-weight: 400;
+      color: #2957b5;
+      margin-left: 16px;
+      transition: transform 0.2s;
+      line-height: 1;
+      user-select: none;
+    }
+    .faq-answer-acc {
+      padding: 0 28px 22px 60px;
+      color: #4d5274;
+      font-size: 1em;
+      display: none;
+      line-height: 1.7;
+      background: #fff;
+    }
+    .faq-item-acc.open .faq-answer-acc {
+      display: block;
+      animation: fadeInFAQ .17s;
+    }
+    @keyframes fadeInFAQ {
+      from { opacity: 0; transform: translateY(-10px);}
+      to { opacity: 1; transform: none;}
+    }
+    .faq-item-acc.open .faq-icon {
+      transform: rotate(180deg);
+    }
+    @media (max-width: 600px) {
+      .faq-answer-acc { padding-left: 22px; }
+      .faq-question-acc { padding: 16px 14px 16px 12px; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- STICKY NAV HEADER -->
   <nav class="main-navbar">
     <div class="nav-content">
       <div class="nav-logo">
@@ -278,11 +404,17 @@
         <span class="nav-logo-text">strukly<span>.co</span></span>
       </div>
       <ul class="nav-menu">
-        <li><a href="#" class="active">Home</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#why">Benefits</a></li>
-        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#" class="active"><span lang="id">Beranda</span><span lang="en">Home</span></a></li>
+        <li><a href="#features"><span lang="id">Fitur</span><span lang="en">Features</span></a></li>
+        <li><a href="#why"><span lang="id">Keunggulan</span><span lang="en">Benefits</span></a></li>
+        <li><a href="#pricing"><span lang="id">Harga</span><span lang="en">Pricing</span></a></li>
         <li><a href="#faq">FAQ</a></li>
+        <li class="lang-dropdown-container">
+            <select class="lang-dropdown" onchange="switchLang(this.value)">
+                <option value="id">ID</option>
+                <option value="en">EN</option>
+            </select>
+        </li>
       </ul>
       <button class="nav-burger" aria-label="Open Menu" onclick="openNav()">
         <svg width="30" height="30" viewBox="0 0 32 32" fill="none">
@@ -301,191 +433,273 @@
         <button class="nav-mobile-close" aria-label="Close Menu" onclick="closeNav()">&times;</button>
       </div>
       <ul class="nav-mobile-list">
-        <li><a href="#" class="active" onclick="closeNav()">Home</a></li>
-        <li><a href="#features" onclick="closeNav()">Features</a></li>
-        <li><a href="#why" onclick="closeNav()">Benefits</a></li>
-        <li><a href="#pricing" onclick="closeNav()">Pricing</a></li>
+        <li><a href="#" class="active" onclick="closeNav()"><span lang="id">Beranda</span><span lang="en">Home</span></a></li>
+        <li><a href="#features" onclick="closeNav()"><span lang="id">Fitur</span><span lang="en">Features</span></a></li>
+        <li><a href="#why" onclick="closeNav()"><span lang="id">Keunggulan</span><span lang="en">Benefits</span></a></li>
+        <li><a href="#pricing" onclick="closeNav()"><span lang="id">Harga</span><span lang="en">Pricing</span></a></li>
         <li><a href="#faq" onclick="closeNav()">FAQ</a></li>
+        <li class="lang-switcher-mobile">
+            <button class="active" onclick="switchLang('id')">ID</button>
+            <button onclick="switchLang('en')">EN</button>
+        </li>
       </ul>
     </div>
   </nav>
 
   <div class="container">
 
-    <!-- HERO SECTION -->
     <section class="hero">
       <h1>
-        <span style="color:#265ae8;font-weight:900;">Smart POS for F&amp;B and Retail</span>
+        <span style="color:#265ae8;font-weight:900;">
+            <span lang="id">POS Cerdas untuk F&B dan Retail</span>
+            <span lang="en">Smart POS for F&B and Retail</span>
+        </span>
         <br>
-        <span style="font-size:0.7em;font-weight:700;color:#24306b;">Cloud based. Fast. Hassle free.</span>
+        <span style="font-size:0.7em;font-weight:700;color:#24306b;">
+            <span lang="id">Berbasis Cloud. Cepat. Tanpa Ribet.</span>
+            <span lang="en">Cloud based. Fast. Hassle free.</span>
+        </span>
       </h1>
       <div class="sub">
-        Run your business better, accept QR payments, manage orders, track inventory, and view sales reports instantly, from anywhere.
+        <span lang="id">Jalankan bisnis Anda lebih baik, terima pembayaran QR, kelola pesanan, lacak inventaris, dan lihat laporan penjualan secara instan, dari mana saja.</span>
+        <span lang="en">Run your business better, accept QR payments, manage orders, track inventory, and view sales reports instantly, from anywhere.</span>
       </div>
       <div class="hero-buttons">
-        <a href="#pricing" class="cta-main">Start 14-Day Free Trial</a>
-        <a href="#why" class="cta-learn">Why Strukly?</a>
+        <a href="#pricing" class="cta-main">
+            <span lang="id">Mulai Uji Coba Gratis 14 Hari</span>
+            <span lang="en">Start 14-Day Free Trial</span>
+        </a>
+        <a href="#why" class="cta-learn">
+            <span lang="id">Mengapa Strukly?</span>
+            <span lang="en">Why Strukly?</span>
+        </a>
       </div>
-      <div class="users">Trusted by: Vapebay, Drinkology, SudoBrew, Bebek Ningrat, Picotine</div>
+      <div class="users">
+        <span lang="id">Dipercaya oleh: Vapebay, Drinkology, SudoBrew, Bebek Ningrat, Picotine</span>
+        <span lang="en">Trusted by: Vapebay, Drinkology, SudoBrew, Bebek Ningrat, Picotine</span>
+    </div>
     </section>
 
-    <!-- GALLERY SECTION -->
     <section class="benefits-section" style="padding-bottom:0;">
-      <h2 style="font-size:2em; font-weight:800; color:#24306b; margin-bottom:26px;">See Strukly POS in Action</h2>
+      <h2 style="font-size:2em; font-weight:800; color:#24306b; margin-bottom:26px;">
+        <span lang="id">Lihat Aksi Strukly POS</span>
+        <span lang="en">See Strukly POS in Action</span>
+    </h2>
       <div style="display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-bottom:18px;">
         <div style="background:#fff;border-radius:18px;box-shadow:0 2px 14px #e9ebfa;padding:10px;max-width:200px;display:flex;flex-direction:column;align-items:center;">
           <img src="pos.png" alt="Cashier POS" loading="lazy" style="width:100%;border-radius:11px;margin-bottom:7px;box-shadow:0 1px 8px #eceffa;border:1.2px solid #e8eaf4;">
-          <div style="font-size:0.97em;color:#2e2e3d;font-weight:500;">Cashier POS</div>
+          <div style="font-size:0.97em;color:#2e2e3d;font-weight:500;">
+            <span lang="id">POS Kasir</span>
+            <span lang="en">Cashier POS</span>
+        </div>
         </div>
         <div style="background:#fff;border-radius:18px;box-shadow:0 2px 14px #e9ebfa;padding:10px;max-width:200px;display:flex;flex-direction:column;align-items:center;">
           <img src="mail_closing.png" alt="Closing Mail Report" loading="lazy" style="width:100%;border-radius:11px;margin-bottom:7px;box-shadow:0 1px 8px #eceffa;border:1.2px solid #e8eaf4;">
-          <div style="font-size:0.97em;color:#2e2e3d;font-weight:500;">Closing Mail Report</div>
+          <div style="font-size:0.97em;color:#2e2e3d;font-weight:500;">
+            <span lang="id">Laporan Email Closing</span>
+            <span lang="en">Closing Mail Report</span>
+        </div>
         </div>
         <div style="background:#fff;border-radius:18px;box-shadow:0 2px 14px #e9ebfa;padding:10px;max-width:200px;display:flex;flex-direction:column;align-items:center;">
           <img src="qr_order.png" alt="QR Order" loading="lazy" style="width:100%;border-radius:11px;margin-bottom:7px;box-shadow:0 1px 8px #eceffa;border:1.2px solid #e8eaf4;">
-          <div style="font-size:0.97em;color:#2e2e3d;font-weight:500;">QR Order</div>
+          <div style="font-size:0.97em;color:#2e2e3d;font-weight:500;">
+            <span lang="id">Pesan via QR</span>
+            <span lang="en">QR Order</span>
+        </div>
         </div>
         <div style="background:#fff;border-radius:18px;box-shadow:0 2px 14px #e9ebfa;padding:10px;max-width:200px;display:flex;flex-direction:column;align-items:center;">
           <img src="slider.png" alt="Customer Display Slider" loading="lazy" style="width:100%;border-radius:11px;margin-bottom:7px;box-shadow:0 1px 8px #eceffa;border:1.2px solid #e8eaf4;">
-          <div style="font-size:0.97em;color:#2e2e3d;font-weight:500;">Customer Display</div>
+          <div style="font-size:0.97em;color:#2e2e3d;font-weight:500;">
+            <span lang="id">Layar Pelanggan</span>
+            <span lang="en">Customer Display</span>
+        </div>
         </div>
       </div>
-      <div style="font-size:1em; color:#4d5274; text-align:center;margin:2px 0 15px 0;">Easy to use on all devices!</div>
+      <div style="font-size:1em; color:#4d5274; text-align:center;margin:2px 0 15px 0;">
+        <span lang="id">Mudah digunakan di semua perangkat!</span>
+        <span lang="en">Easy to use on all devices!</span>
+    </div>
     </section>
 
-    <!-- WHY CHOOSE STRUKLY (ADVANTAGE) -->
     <section class="benefits-section" id="why" style="padding-bottom:10px;">
-      <h2 style="font-size:2em; font-weight:800; color:#24306b; margin-bottom:26px;">Why Choose Strukly Over Others?</h2>
+      <h2 style="font-size:2em; font-weight:800; color:#24306b; margin-bottom:26px;">
+        <span lang="id">Mengapa Memilih Strukly?</span>
+        <span lang="en">Why Choose Strukly Over Others?</span>
+    </h2>
       <div class="benefits-list">
         <div class="benefit">
           <span class="benefit-emoji">☁️</span>
           <div>
-            <div style="font-size:1.23em;font-weight:700;line-height:1.18;">Truly Cloud-Based</div>
-            <div style="font-size:1em;color:#232;">Access anywhere, anytime. No server headaches.</div>
+            <div style="font-size:1.23em;font-weight:700;line-height:1.18;">
+                <span lang="id">Benar-Benar Berbasis Cloud</span>
+                <span lang="en">Truly Cloud-Based</span>
+            </div>
+            <div style="font-size:1em;color:#232;">
+                <span lang="id">Akses di mana saja, kapan saja. Tanpa pusing urusan server.</span>
+                <span lang="en">Access anywhere, anytime. No server headaches.</span>
+            </div>
           </div>
         </div>
         <div class="benefit">
           <span class="benefit-emoji">🔌</span>
           <div>
-            <div style="font-size:1.13em;font-weight:700;line-height:1.18;">Works Offline</div>
-            <div style="font-size:1em;color:#232;">Accept orders & payments even when the internet drops. Syncs auto when online.</div>
+            <div style="font-size:1.13em;font-weight:700;line-height:1.18;">
+                <span lang="id">Berfungsi Offline</span>
+                <span lang="en">Works Offline</span>
+            </div>
+            <div style="font-size:1em;color:#232;">
+                <span lang="id">Tetap terima pesanan & pembayaran meski internet putus. Sinkronisasi otomatis saat online.</span>
+                <span lang="en">Accept orders & payments even when the internet drops. Syncs auto when online.</span>
+            </div>
           </div>
         </div>
         <div class="benefit">
           <span class="benefit-emoji">⚡</span>
           <div>
-            <div style="font-size:1.13em;font-weight:700;line-height:1.18;">Lightning Setup & Support</div>
-            <div style="font-size:1em;color:#232;">Get started in minutes. Support via WhatsApp & Email, no waiting days.</div>
+            <div style="font-size:1.13em;font-weight:700;line-height:1.18;">
+                <span lang="id">Pengaturan & Dukungan Cepat</span>
+                <span lang="en">Lightning Setup & Support</span>
+            </div>
+            <div style="font-size:1em;color:#232;">
+                <span lang="id">Mulai dalam hitungan menit. Dukungan via WhatsApp & Email, tanpa menunggu berhari-hari.</span>
+                <span lang="en">Get started in minutes. Support via WhatsApp & Email, no waiting days.</span>
+            </div>
           </div>
         </div>
         <div class="benefit">
           <span class="benefit-emoji">🎯</span>
           <div>
-            <div style="font-size:1.13em;font-weight:700;line-height:1.18;">All-in-One Platform</div>
-            <div style="font-size:1em;color:#232;">POS, inventory, reporting, loyalty, and payment in one. Proven for modern brands.</div>
+            <div style="font-size:1.13em;font-weight:700;line-height:1.18;">
+                <span lang="id">Platform Lengkap</span>
+                <span lang="en">All-in-One Platform</span>
+            </div>
+            <div style="font-size:1em;color:#232;">
+                <span lang="id">POS, inventaris, laporan, loyalitas, dan pembayaran dalam satu. Terbukti untuk brand modern.</span>
+                <span lang="en">POS, inventory, reporting, loyalty, and payment in one. Proven for modern brands.</span>
+            </div>
           </div>
         </div>
       </div>
       <div style="margin-top:32px;">
-        <a href="#pricing" class="cta-main" style="padding:15px 44px;font-size:1.18em;">Try Strukly Free for 14 Days</a>
-        <div style="font-size:1.07em; color:#2957b5; margin-top:6px;">No credit card required</div>
+        <a href="#pricing" class="cta-main" style="padding:15px 44px;font-size:1.18em;">
+            <span lang="id">Coba Strukly Gratis 14 Hari</span>
+            <span lang="en">Try Strukly Free for 14 Days</span>
+        </a>
+        <div style="font-size:1.07em; color:#2957b5; margin-top:6px;">
+            <span lang="id">Tanpa perlu kartu kredit</span>
+            <span lang="en">No credit card required</span>
+        </div>
       </div>
     </section>
 
-    <!-- FEATURES GRID -->
     <section style="text-align:center;padding:22px 0 32px 0;" id="features">
       <h2 style="font-size:2em;font-weight:800;color:#24306b;margin-bottom:18px;letter-spacing:-1px;">
-        Key Features
+        <span lang="id">Fitur Utama</span>
+        <span lang="en">Key Features</span>
       </h2>
       <div class="feature-list">
-        <div class="feature"><span style="font-size:1.5em;">✅</span> <div><b>QR Payment at POS</b><br>Instant receipt printing, QRIS validation</div></div>
-        <div class="feature"><span style="font-size:1.5em;">📊</span> <div><b>Realtime Dashboard</b><br>Sales, outlet, and inventory monitoring</div></div>
-        <div class="feature"><span style="font-size:1.5em;">🍳</span> <div><b>Kitchen Screen</b><br>Orders sent directly to kitchen without any paper</div></div>
-        <div class="feature"><span style="font-size:1.5em;">🎁</span> <div><b>Loyalty & Birthday Promo</b><br>Membership points and auto rewards by sistem</div></div>
-        <div class="feature"><span style="font-size:1.5em;">📦</span> <div><b>Live Inventory</b><br>Auto stock update & warnings</div></div>
-        <div class="feature"><span style="font-size:1.5em;">🖥️</span> <div><b>Customer Display Slider</b><br>Show promos on customer display</div></div>
-        <div class="feature"><span style="font-size:1.5em;">📧</span> <div><b>Automated Reports</b><br>Email closing & daily summaries</div></div>
-        <div class="feature"><span style="font-size:1.5em;">🔒</span> <div><b>Security by Design</b><br>Email OTP for approval discount and Refund</div></div>
-        <div class="feature"><span style="font-size:1.5em;">🔗</span> <div><b>QR Order</b><br>Customers order via QR, goes direct to kitchen without cashier help</div></div>
-        <div class="feature"><span style="font-size:1.5em;">💳</span> <div><b>Flexible Payments</b><br>Switch methods, no refund hassle</div></div>
+        <div class="feature"><span style="font-size:1.5em;">✅</span> <div><b><span lang="id">Pembayaran QR di POS</span><span lang="en">QR Payment at POS</span></b><br><span lang="id">Cetak struk instan, validasi QRIS</span><span lang="en">Instant receipt printing, QRIS validation</span></div></div>
+        <div class="feature"><span style="font-size:1.5em;">📊</span> <div><b><span lang="id">Dasbor Real-time</span><span lang="en">Realtime Dashboard</span></b><br><span lang="id">Monitor penjualan, outlet, dan inventaris</span><span lang="en">Sales, outlet, and inventory monitoring</span></div></div>
+        <div class="feature"><span style="font-size:1.5em;">🍳</span> <div><b><span lang="id">Layar Dapur</span><span lang="en">Kitchen Screen</span></b><br><span lang="id">Pesanan langsung ke dapur tanpa kertas</span><span lang="en">Orders sent directly to kitchen without any paper</span></div></div>
+        <div class="feature"><span style="font-size:1.5em;">🎁</span> <div><b><span lang="id">Promo Loyalitas & Ulang Tahun</span><span lang="en">Loyalty & Birthday Promo</span></b><br><span lang="id">Poin keanggotaan dan hadiah otomatis oleh sistem</span><span lang="en">Membership points and auto rewards by system</span></div></div>
+        <div class="feature"><span style="font-size:1.5em;">📦</span> <div><b><span lang="id">Inventaris Langsung</span><span lang="en">Live Inventory</span></b><br><span lang="id">Update stok & peringatan otomatis</span><span lang="en">Auto stock update & warnings</span></div></div>
+        <div class="feature"><span style="font-size:1.5em;">🖥️</span> <div><b><span lang="id">Layar Promo Pelanggan</span><span lang="en">Customer Display Slider</span></b><br><span lang="id">Tampilkan promo di layar pelanggan</span><span lang="en">Show promos on customer display</span></div></div>
+        <div class="feature"><span style="font-size:1.5em;">📧</span> <div><b><span lang="id">Laporan Otomatis</span><span lang="en">Automated Reports</span></b><br><span lang="id">Email ringkasan closing & harian</span><span lang="en">Email closing & daily summaries</span></div></div>
+        <div class="feature"><span style="font-size:1.5em;">🔒</span> <div><b><span lang="id">Keamanan Terjamin</span><span lang="en">Security by Design</span></b><br><span lang="id">OTP Email untuk persetujuan diskon dan refund</span><span lang="en">Email OTP for approval discount and Refund</span></div></div>
+        <div class="feature"><span style="font-size:1.5em;">🔗</span> <div><b><span lang="id">Pesan via QR</span><span lang="en">QR Order</span></b><br><span lang="id">Pelanggan pesan via QR, langsung ke dapur tanpa bantuan kasir</span><span lang="en">Customers order via QR, goes direct to kitchen without cashier help</span></div></div>
+        <div class="feature"><span style="font-size:1.5em;">💳</span> <div><b><span lang="id">Pembayaran Fleksibel</span><span lang="en">Flexible Payments</span></b><br><span lang="id">Ganti metode, tanpa repot refund</span><span lang="en">Switch methods, no refund hassle</span></div></div>
       </div>
       <div style="margin-top:28px;">
-        <a href="#pricing" class="cta-main" style="padding:15px 44px;font-size:1.13em;">See Our Plans</a>
+        <a href="#pricing" class="cta-main" style="padding:15px 44px;font-size:1.13em;">
+            <span lang="id">Lihat Paket Kami</span>
+            <span lang="en">See Our Plans</span>
+        </a>
       </div>
     </section>
 
-    <!-- TESTIMONIAL SECTION -->
     <section class="testimoni-section" style="margin:44px 0 28px 0;text-align:center;">
       <h2 style="font-size:2em; font-weight:800; color:#24306b; margin-bottom:28px; letter-spacing:-1px;">
-        What Our Users Say
+        <span lang="id">Kata Pengguna Kami</span>
+        <span lang="en">What Our Users Say</span>
       </h2>
       <div id="testiSplide" class="splide" style="max-width:540px;margin:0 auto;">
         <div class="splide__track">
           <ul class="splide__list">
             <li class="splide__slide">
               <div style="background:#fff; border-radius:13px; box-shadow:0 2px 14px #e2e9fa; padding:30px 22px;">
-                <div style="font-size:1.13em; color:#1c2246; margin-bottom:10px;">"Strukly makes cashier operations super fast and sends daily sales reports right to our inbox."</div>
+                <div style="font-size:1.13em; color:#1c2246; margin-bottom:10px;">
+                    <span lang="id">"Strukly membuat operasional kasir super cepat dan mengirimkan laporan penjualan harian langsung ke email kami."</span>
+                    <span lang="en">"Strukly makes cashier operations super fast and sends daily sales reports right to our inbox."</span>
+                </div>
                 <div style="font-weight:700; color:#2957b5;">Sudo Brew</div>
               </div>
             </li>
             <li class="splide__slide">
               <div style="background:#fff; border-radius:13px; box-shadow:0 2px 14px #e2e9fa; padding:30px 22px;">
-                <div style="font-size:1.13em; color:#1c2246; margin-bottom:10px;">"Managing tables and orders is easy from the dashboard. Perfect for restaurants with multiple cashiers!"</div>
+                <div style="font-size:1.13em; color:#1c2246; margin-bottom:10px;">
+                    <span lang="id">"Mengelola meja dan pesanan jadi mudah dari dasbor. Cocok untuk restoran dengan banyak kasir!"</span>
+                    <span lang="en">"Managing tables and orders is easy from the dashboard. Perfect for restaurants with multiple cashiers!"</span>
+                </div>
                 <div style="font-weight:700; color:#2957b5;">Bebek Ningrat</div>
               </div>
             </li>
             <li class="splide__slide">
               <div style="background:#fff; border-radius:13px; box-shadow:0 2px 14px #e2e9fa; padding:30px 22px;">
-                <div style="font-size:1.13em; color:#1c2246; margin-bottom:10px;">"The real-time dashboard and sales reports are super useful. Support is fast and responsive."</div>
+                <div style="font-size:1.13em; color:#1c2246; margin-bottom:10px;">
+                    <span lang="id">"Dasbor real-time dan laporan penjualannya sangat berguna. Dukungannya cepat dan responsif."</span>
+                    <span lang="en">"The real-time dashboard and sales reports are super useful. Support is fast and responsive."</span>
+                </div>
                 <div style="font-weight:700; color:#2957b5;">Drinkology</div>
               </div>
             </li>
             <li class="splide__slide">
               <div style="background:#fff; border-radius:13px; box-shadow:0 2px 14px #e2e9fa; padding:30px 22px;">
-                <div style="font-size:1.13em; color:#1c2246; margin-bottom:10px;"> "Strukly is very easy to use for all our staff, and the customer support is always quick and helpful. Highly recommended!" </div>
-                  <div style="font-weight:700; color:#2957b5;">Picotine</div>
+                <div style="font-size:1.13em; color:#1c2246; margin-bottom:10px;">
+                    <span lang="id">"Strukly sangat mudah digunakan untuk semua staf kami, dan dukungan pelanggannya selalu cepat dan membantu. Sangat direkomendasikan!"</span>
+                    <span lang="en">"Strukly is very easy to use for all our staff, and the customer support is always quick and helpful. Highly recommended!"</span>
+                </div>
+                <div style="font-weight:700; color:#2957b5;">Picotine</div>
               </div>
             </li>
-
             <li class="splide__slide">
-              <div style="background:#fff; border-radius:13px; box-shadow:0 2px 14px #e2e9fa; padding:30px 22px;">
-                <div style="font-size:1.13em; color:#1c2246; margin-bottom:10px;">"Strukly is simple yet powerful. Multi-outlet support makes it easy to manage our busy stores."</div>
-                <div style="font-weight:700; color:#2957b5;">Vapebay</div>
-              </div>
-            </li>
+                <div style="background:#fff; border-radius:13px; box-shadow:0 2px 14px #e2e9fa; padding:30px 22px;">
+                  <div style="font-size:1.13em; color:#1c2246; margin-bottom:10px;">
+                      <span lang="id">"Strukly sederhana namun powerful. Dukungan multi-outlet memudahkan pengelolaan toko kami yang sibuk."</span>
+                      <span lang="en">"Strukly is simple yet powerful. Multi-outlet support makes it easy to manage our busy stores."</span>
+                  </div>
+                  <div style="font-weight:700; color:#2957b5;">Vapebay</div>
+                </div>
+              </li>
           </ul>
         </div>
       </div>
       <div style="margin-top:32px;">
-        <a href="#pricing" class="cta-main" style="padding:15px 46px;font-size:1.17em;">Start Free 14-Day Trial</a>
-        <div style="font-size:1.07em; color:#2957b5; margin-top:6px;">No credit card required</div>
+        <a href="#pricing" class="cta-main" style="padding:15px 46px;font-size:1.17em;">
+            <span lang="id">Mulai Uji Coba Gratis 14 Hari</span>
+            <span lang="en">Start Free 14-Day Trial</span>
+        </a>
+        <div style="font-size:1.07em; color:#2957b5; margin-top:6px;">
+            <span lang="id">Tanpa perlu kartu kredit</span>
+            <span lang="en">No credit card required</span>
+        </div>
       </div>
     </section>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        new Splide('#testiSplide', {
-          type: 'loop',
-          perPage: 1,
-          autoplay: true,
-          interval: 4000,
-          pauseOnHover: true,
-          arrows: false,
-          pagination: true,
-          height: 'auto'
-        }).mount();
-      });
-    </script>
 
-    <!-- PRICING SECTION -->
     <section class="pricing-section" id="pricing">
-      <h2>Choose Your Plan</h2>
+      <h2>
+        <span lang="id">Pilih Paket Anda</span>
+        <span lang="en">Choose Your Plan</span>
+    </h2>
       <div class="plans">
         <div class="plan">
           <h3>Basic</h3>
           <div class="plan-price-row">
             <span class="plan-currency">Rp</span>
             <span class="plan-price-main">250K</span>
-            <span class="plan-permonth">/month</span>
+            <span class="plan-permonth">
+                <span lang="id">/bulan</span>
+                <span lang="en">/month</span>
+            </span>
           </div>
           <ul>
             <li>Multi POS</li>
@@ -508,14 +722,20 @@
             <li>Customer Display Slider</li>
             <li>Email Closing & Approval Via Email</li>
           </ul>
-          <a href="https://buy.stripe.com/4gMbJ24Tk2WleOCbPGabK00" class="cta">Select Basic</a>
+          <a href="https://buy.stripe.com/4gMbJ24Tk2WleOCbPGabK00" class="cta">
+            <span lang="id">Pilih Basic</span>
+            <span lang="en">Select Basic</span>
+        </a>
         </div>
         <div class="plan">
           <h3>Advanced</h3>
           <div class="plan-price-row">
             <span class="plan-currency">Rp</span>
             <span class="plan-price-main">550K</span>
-            <span class="plan-permonth">/month</span>
+            <span class="plan-permonth">
+                <span lang="id">/bulan</span>
+                <span lang="en">/month</span>
+            </span>
           </div>
           <ul>
             <li>Multi POS</li>
@@ -542,192 +762,135 @@
             <li>Full Feature Accounting / Invoicing</li>
             <li>Full Feature Manufacture</li>
           </ul>
-          <a href="YOUR_STRIPE_CHECKOUT_LINK_ADVANCED" class="cta">Select Advanced</a>
+          <a href="YOUR_STRIPE_CHECKOUT_LINK_ADVANCED" class="cta">
+            <span lang="id">Pilih Advanced</span>
+            <span lang="en">Select Advanced</span>
+        </a>
         </div>
       </div>
     </section>
 
-<!-- FAQ SECTION (plus/minus accordion, warna tema strukly) -->
-<style>
-.faq-section {
-  max-width: 900px;
-  margin: 40px auto 0 auto;
-  font-family: 'Inter', Arial, sans-serif;
-  color: #21254a;
-}
-.faq-section h2 {
-  text-align: center;
-  font-size: 2em;
-  font-weight: 700;
-  margin-bottom: 36px;
-  color: #24306b;
-}
-.faq-accordion {
-  margin: 0 auto;
-}
-.faq-item-acc {
-  background: #fff;
-  border-radius: 13px;
-  box-shadow: 0 2px 14px #e2e9fa;
-  margin-bottom: 18px;
-  padding: 0;
-  color: #21254a;
-  transition: box-shadow 0.14s;
-}
-.faq-question-acc {
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 22px 28px 22px 22px;
-  font-size: 1.11em;
-  font-weight: 700;
-  border: none;
-  outline: none;
-  background: transparent;
-  width: 100%;
-  transition: background 0.12s;
-  border-radius: 13px;
-  text-align: left;
-  color: #24306b;
-}
-.faq-question-acc:hover {
-  background: #e5f0ff;
-}
-.faq-icon {
-  font-size: 1.8em;
-  font-weight: 400;
-  color: #2957b5;
-  margin-left: 16px;
-  transition: transform 0.2s;
-  line-height: 1;
-  user-select: none;
-}
-.faq-answer-acc {
-  padding: 0 28px 22px 60px;
-  color: #4d5274;
-  font-size: 1em;
-  display: none;
-  line-height: 1.7;
-  background: #fff;
-}
-.faq-item-acc.open .faq-answer-acc {
-  display: block;
-  animation: fadeInFAQ .17s;
-}
-@keyframes fadeInFAQ {
-  from { opacity: 0; transform: translateY(-10px);}
-  to { opacity: 1; transform: none;}
-}
-.faq-item-acc.open .faq-icon {
-  transform: rotate(180deg);
-}
-@media (max-width: 600px) {
-  .faq-answer-acc { padding-left: 22px; }
-  .faq-question-acc { padding: 16px 14px 16px 12px; }
-}
-</style>
-
-<section class="faq-section" id="faq">
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq-accordion">
-    <div class="faq-item-acc open">
-      <button class="faq-question-acc" onclick="toggleFAQ(this)">
-        How fast can I go live with Strukly?
-        <span class="faq-icon">−</span>
-      </button>
-      <div class="faq-answer-acc">
-        You can be up and running in minutes. Just sign up, set up your outlets and products, and start using Strukly immediately.
+    <section class="faq-section" id="faq">
+      <h2>
+        <span lang="id">Pertanyaan Umum</span>
+        <span lang="en">Frequently Asked Questions</span>
+      </h2>
+      <div class="faq-accordion">
+        <div class="faq-item-acc open">
+          <button class="faq-question-acc" onclick="toggleFAQ(this)">
+            <span>
+                <span lang="id">Seberapa cepat saya bisa mulai menggunakan Strukly?</span>
+                <span lang="en">How fast can I go live with Strukly?</span>
+            </span>
+            <span class="faq-icon">−</span>
+          </button>
+          <div class="faq-answer-acc" style="display: block;">
+            <span lang="id">Anda bisa siap dan berjalan dalam hitungan menit. Cukup daftar, atur outlet dan produk Anda, dan mulai gunakan Strukly segera.</span>
+            <span lang="en">You can be up and running in minutes. Just sign up, set up your outlets and products, and start using Strukly immediately.</span>
+          </div>
+        </div>
+        <div class="faq-item-acc">
+            <button class="faq-question-acc" onclick="toggleFAQ(this)">
+              <span>
+                  <span lang="id">Apakah saya memerlukan perangkat keras khusus?</span>
+                  <span lang="en">Do I need any special hardware?</span>
+              </span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer-acc">
+              <span lang="id">Tidak. Strukly berfungsi di browser apa pun dan sebagian besar perangkat (laptop, tablet, terminal POS). Untuk mencetak struk, cukup sambungkan printer struk standar.</span>
+              <span lang="en">No. Strukly works on any browser and most devices (laptop, tablet, POS terminal). For receipt printing, just connect any standard receipt printer.</span>
+            </div>
+          </div>
+        <div class="faq-item-acc">
+          <button class="faq-question-acc" onclick="toggleFAQ(this)">
+            <span>
+                <span lang="id">Bisakah saya menggunakan QRIS saya sendiri untuk pembayaran?</span>
+                <span lang="en">Can I use my own QRIS for payments?</span>
+            </span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer-acc">
+            <span lang="id">Ya! Strukly kompatibel dengan QRIS dan mendukung validasi instan untuk pengalaman pembayaran pelanggan yang mulus.</span>
+            <span lang="en">Yes! Strukly is compatible with QRIS and supports instant validation for seamless customer payment experiences.</span>
+          </div>
+        </div>
+        <div class="faq-item-acc">
+          <button class="faq-question-acc" onclick="toggleFAQ(this)">
+            <span>
+                <span lang="id">Bisakah Strukly digunakan secara offline?</span>
+                <span lang="en">Can Strukly be used offline?</span>
+            </span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer-acc">
+            <span lang="id">Ya, Strukly mendukung mode offline. Anda dapat terus berjualan dan menerima pesanan meskipun internet terputus. Semua data akan disinkronkan secara otomatis setelah koneksi kembali.</span>
+            <span lang="en">Yes, Strukly supports offline mode. You can keep selling and taking orders even if the internet drops. All data will sync automatically once the connection is back.</span>
+          </div>
+        </div>
+        <div class="faq-item-acc">
+          <button class="faq-question-acc" onclick="toggleFAQ(this)">
+            <span>
+                <span lang="id">Apa yang terjadi setelah masa percobaan gratis berakhir?</span>
+                <span lang="en">What happens after the free trial?</span>
+            </span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer-acc">
+            <span lang="id">Anda dapat memilih paket dan terus menggunakan semua data dan pengaturan Anda—tanpa gangguan. Jika Anda tidak meningkatkan, data Anda aman dan dapat diekspor kapan saja.</span>
+            <span lang="en">You can choose a plan and continue using all your data and settings—no disruption. If you don’t upgrade, your data is safe and can be exported anytime.</span>
+          </div>
+        </div>
+        <div class="faq-item-acc">
+          <button class="faq-question-acc" onclick="toggleFAQ(this)">
+            <span>
+                <span lang="id">Apakah ada tim dukungan jika saya butuh bantuan?</span>
+                <span lang="en">Is there a support team if I need help?</span>
+            </span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer-acc">
+            <span lang="id">Tentu saja. Helpdesk kami siap mendukung Anda melalui email atau WhatsApp, termasuk orientasi dan pemecahan masalah.</span>
+            <span lang="en">Absolutely. Our helpdesk is ready to support you by email or WhatsApp, including onboarding and troubleshooting.</span>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="faq-item-acc">
-      <button class="faq-question-acc" onclick="toggleFAQ(this)">
-        Do I need any special hardware?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer-acc">
-        No. Strukly works on any browser and most devices (laptop, tablet, POS terminal). For receipt printing, just connect any standard receipt printer.
-      </div>
-    </div>
-    <div class="faq-item-acc">
-      <button class="faq-question-acc" onclick="toggleFAQ(this)">
-        Can I use my own QRIS for payments?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer-acc">
-        Yes! Strukly is compatible with QRIS and supports instant validation for seamless customer payment experiences.
-      </div>
-    </div>
-    <div class="faq-item-acc">
-      <button class="faq-question-acc" onclick="toggleFAQ(this)">
-        Can Strukly be used offline?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer-acc">
-        Yes, Strukly supports offline mode. You can keep selling and taking orders even if the internet drops. All data will sync automatically once the connection is back.
-      </div>
-    </div>
-    <div class="faq-item-acc">
-      <button class="faq-question-acc" onclick="toggleFAQ(this)">
-        What happens after the free trial?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer-acc">
-        You can choose a plan and continue using all your data and settings—no disruption. If you don’t upgrade, your data is safe and can be exported anytime.
-      </div>
-    </div>
-    <div class="faq-item-acc">
-      <button class="faq-question-acc" onclick="toggleFAQ(this)">
-        Is there a support team if I need help?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer-acc">
-        Absolutely. Our helpdesk is ready to support you by email or WhatsApp, including onboarding and troubleshooting.
-      </div>
-    </div>
-  </div>
-</section>
-<script>
-function toggleFAQ(btn) {
-  const item = btn.closest('.faq-item-acc');
-  const wasOpen = item.classList.contains('open');
-  // Close all
-  document.querySelectorAll('.faq-item-acc').forEach(i => {
-    i.classList.remove('open');
-    i.querySelector('.faq-icon').textContent = '+';
-  });
-  if (!wasOpen) {
-    item.classList.add('open');
-    item.querySelector('.faq-icon').textContent = '−';
-  }
-}
-</script>
+    </section>
 
     <div class="links-below">
-      <a href="/terms.html">Terms</a> • <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">
+        <span lang="id">Syarat</span><span lang="en">Terms</span>
+    </a> • <a href="/privacy.html">
+        <span lang="id">Privasi</span><span lang="en">Privacy</span>
+    </a>
     </div>
   </div>
 
-  <!-- FOOTER START -->
   <footer class="footer-dark">
     <div class="footer-container">
       <div class="footer-col">
         <div class="footer-logo-text">Strukly</div>
         <div class="footer-desc">
-          Smart POS & QR Payment<br>
-          for F&B & Retail
+            <span lang="id">POS Cerdas & Pembayaran QR<br>untuk F&B & Retail</span>
+            <span lang="en">Smart POS & QR Payment<br>for F&B & Retail</span>
         </div>
       </div>
       <div class="footer-col">
-        <div class="footer-title">Quick Links</div>
+        <div class="footer-title">
+            <span lang="id">Tautan Cepat</span>
+            <span lang="en">Quick Links</span>
+        </div>
         <ul class="footer-links">
-          <li><a href="#features">Features</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="#features"><span lang="id">Fitur</span><span lang="en">Features</span></a></li>
+          <li><a href="#pricing"><span lang="id">Harga</span><span lang="en">Pricing</span></a></li>
+          <li><a href="/privacy.html"><span lang="id">Kebijakan Privasi</span><span lang="en">Privacy Policy</span></a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <div class="footer-title">Contact</div>
+        <div class="footer-title">
+            <span lang="id">Kontak</span>
+            <span lang="en">Contact</span>
+        </div>
         <div class="footer-contact">
           <div><a href="mailto:helpdesk@tilabs.id">helpdesk@tilabs.id</a></div>
           <div>
@@ -746,8 +909,6 @@ function toggleFAQ(btn) {
       &copy; 2025 Strukly.co | PT Teknologi Inovasi Labs
     </div>
   </footer>
-  <!-- FOOTER END -->
-
   <script>
     function openNav() {
       document.getElementById('navMobile').style.display = 'flex';
@@ -757,7 +918,71 @@ function toggleFAQ(btn) {
       document.getElementById('navMobile').style.display = 'none';
       document.body.style.overflow = '';
     }
+
+    function switchLang(lang) {
+        document.documentElement.lang = lang;
+        const elementsEn = document.querySelectorAll('[lang="en"]');
+        const elementsId = document.querySelectorAll('[lang="id"]');
+        
+        if (lang === 'en') {
+            elementsEn.forEach(el => el.style.display = 'inline');
+            elementsId.forEach(el => el.style.display = 'none');
+        } else {
+            elementsId.forEach(el => el.style.display = 'inline');
+            elementsEn.forEach(el => el.style.display = 'none');
+        }
+
+        // Update active state for mobile buttons
+        const mobileButtons = document.querySelectorAll('.lang-switcher-mobile button');
+        if (mobileButtons.length > 0) {
+            mobileButtons.forEach(btn => {
+                if (btn.getAttribute('onclick').includes(`'${lang}'`)) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+        
+        // Update desktop dropdown
+        const desktopDropdown = document.querySelector('.nav-menu .lang-dropdown');
+        if (desktopDropdown) {
+            desktopDropdown.value = lang;
+        }
+    }
+
+    function toggleFAQ(btn) {
+      const item = btn.closest('.faq-item-acc');
+      const answer = item.querySelector('.faq-answer-acc');
+      const icon = item.querySelector('.faq-icon');
+      const wasOpen = item.classList.contains('open');
+
+      // Close all other items
+      document.querySelectorAll('.faq-item-acc').forEach(i => {
+        if (i !== item) {
+          i.classList.remove('open');
+          i.querySelector('.faq-answer-acc').style.display = 'none';
+          i.querySelector('.faq-icon').textContent = '+';
+        }
+      });
+      
+      // Toggle the clicked item
+      if (wasOpen) {
+        item.classList.remove('open');
+        answer.style.display = 'none';
+        icon.textContent = '+';
+      } else {
+        item.classList.add('open');
+        answer.style.display = 'block';
+        icon.textContent = '−';
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
+      // Initialize language to Indonesian
+      switchLang('id');
+
+      // Initialize Splide slider
       if (window.Splide) {
         new Splide('#testiSplide', {
           type: 'loop',
