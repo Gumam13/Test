@@ -7,7 +7,6 @@
   <meta name="description" content="All-in-one POS for F&B & Retail outlets. Payments, orders, and automated reporting. Free 14-day trial!">
   <link rel="icon" type="image/png" href="logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;900&display=swap" rel="stylesheet">
-    <!-- Splide.js CDN for slider -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js"></script>
   <style>
@@ -97,19 +96,12 @@
       .nav-burger { display: flex !important; }
       .nav-content { padding: 0 9px;}
     }
-     /* === MOBILE NAVBAR MODERN, Blur Only Menu === */
-    .nav-mobile-menu {
-      display: none;
-    }
+    .nav-mobile-menu { display: none; }
     @media (max-width: 1000px) {
-      .nav-menu { display: none !important; }
-      .nav-burger { display: flex !important; }
-      .nav-content { padding: 0 9px;}
       .nav-mobile-menu {
         position: absolute;
         left: 0; top: 0;
         width: 100vw;
-        /* Only as high as needed for menu, not full page! */
         background: rgba(21, 18, 33, 0.93);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
@@ -189,7 +181,6 @@
         color: #f5a623;
         font-weight: 700;
       }
-      /* Tinggi menu (header + 5 menu = sekitar 330px, auto) */
       .nav-mobile-menu {
         max-height: 370px;
         border-radius: 0 0 22px 22px;
@@ -204,51 +195,34 @@
         to { transform: none; opacity: 1;}
       }
     }
-    /* === END NAVBAR === */
-
-    /* Konten lain tetap seperti style Anda */
     .container {
       max-width: 1100px;
       margin: 0 auto;
       padding: 0 24px;
     }
     .hero { text-align: center; padding: 68px 0 32px 0; }
-    .hero h1 { font-size: 2.8em; font-weight: 900; margin: 0 0 16px 0; letter-spacing: -1.2px; color: #1c2246;}
-    .hero .sub { color: #39406e; font-size: 1.25em; font-weight: 500; margin: 0 0 32px 0; line-height: 1.5;}
+    .hero h1 { font-size: 2.3em; font-weight: 900; margin: 0 0 14px 0; letter-spacing: -1.2px; color: #1c2246;}
+    .hero .sub { color: #39406e; font-size: 1.18em; font-weight: 500; margin: 0 0 32px 0; line-height: 1.5;}
     .hero-buttons { display: flex; justify-content: center; gap: 18px; margin-bottom: 10px; flex-wrap: wrap;}
     .cta-main { background: linear-gradient(90deg, #265ae8 60%, #3d74fa 100%); color: #fff; font-size: 1.13em; font-weight: 700; border: none; padding: 18px 44px; border-radius: 28px; cursor: pointer; box-shadow: 0 3px 16px #dde8fd; text-decoration: none; transition: background 0.18s, box-shadow 0.2s; display: inline-block;}
     .cta-main:hover { background: linear-gradient(90deg, #214dbd 60%, #265ae8 100%); box-shadow: 0 6px 22px #b6cdfd;}
     .cta-learn { background: none; color: #2957b5; font-size: 1.13em; font-weight: 700; border: 2px solid #2957b5; padding: 18px 44px; border-radius: 28px; cursor: pointer; text-decoration: none; transition: background 0.18s, color 0.18s, border 0.18s; display: inline-block;}
     .cta-learn:hover { background: #2957b5; color: #fff; border-color: #2957b5;}
     .users { color: #3a4e8a; background: #e5f0ff; padding: 8px 18px; border-radius: 8px; font-size: 1.08em; margin: 22px 0 0 0; display: inline-block; font-weight: 600; letter-spacing: 0.01em;}
-    .feature-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; margin: 56px 0 62px 0;}
-    .feature { background: #fff; border-radius: 14px; box-shadow: 0 2px 16px #ecf1fc; padding: 30px 18px 22px 18px; font-size: 1.07em; min-height: 110px; font-weight: 500; display: flex; align-items: flex-start; gap: 10px; color: #253261;}
     .benefits-section { text-align: center; padding: 30px 0 35px 0;}
     .benefits-section h2 { font-size: 2em; font-weight: 700; margin-bottom: 36px; color: #24306b;}
     .benefits-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; max-width: 900px; margin: 0 auto;}
     .benefit { display: flex; align-items: flex-start; background: #fff; border-radius: 14px; box-shadow: 0 2px 16px #ecf1fc; padding: 24px 16px; font-size: 1.08em; gap: 16px; text-align: left;}
     .benefit-emoji { font-size: 2em; line-height: 1; margin-top: 2px;}
-    .pricing-section { padding: 10px 0 32px 0; text-align: center;}
-    .pricing-section h2 { font-size: 2em; font-weight: 700; margin-bottom: 36px; color: #24306b;}
-    .plans { display: flex; 
-      gap: 24px; 
-      justify-content: center; 
-      align-items: stretch; 
-      flex-wrap: wrap;
-      margin-bottom: 10px;
-    }
-    .plan { background: #fff; 
-      border-radius: 18px; 
-      box-shadow: 0 3px 22px #e2e9fb; 
-      padding: 24px 16px 22px 16px; 
-      min-width: 180px; max-width: 400px; 
-      width: 100%; display: flex; flex-direction: column; align-items: flex-start; transition: box-shadow 0.18s, transform 0.14s; position: relative; 
-      margin: 0 auto 22px auto;
-      box-sizing: border-box;
-    }
-    .plan:hover { box-shadow: 0 8px 32px #bdd0fa; transform: translateY(-5px) scale(1.025);}
-    .plan h3 { margin: 0 0 14px 0; font-size: 1.08em; font-weight: 800; color: #2957b5; letter-spacing: 0.01em;}
-    .plan ul { text-align: left; padding-left: 18px; margin: 0 0 18px 0; font-size: 1.08em; flex: 1 1 auto; color: #242b54;}
+    .feature-list, .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; margin: 38px 0 32px 0;}
+    .feature-list, .plans, .benefits-list { width: 100%; }
+    .feature, .plan { background: #fff; border-radius: 14px; box-shadow: 0 2px 16px #ecf1fc; padding: 22px 18px; font-size: 1.07em; font-weight: 500; display: flex; align-items: flex-start; gap: 10px; color: #253261;}
+    .plan { flex-direction: column; align-items: flex-start; position: relative; }
+    .plan-price-row { display: flex; align-items: flex-end; gap: 2px; margin-bottom: 10px;}
+    .plan-currency { font-size: 2em; font-weight: 500; color: #191919; line-height: 1;}
+    .plan-price-main { font-size: 2.5em; font-weight: 700; color: #191919; letter-spacing: -1px; margin-left: 3px; margin-right: 2px; line-height: 1;}
+    .plan-permonth { font-size: 1em; color: #444; font-weight: 500; margin-left: 3px; line-height: 1.1;}
+    .plan ul { text-align: left; padding-left: 18px; margin: 0 0 18px 0; font-size: 1.08em; color: #242b54;}
     .plan .cta { width: 100%; text-align: center; background: linear-gradient(90deg, #265ae8 60%, #3d74fa 100%); border: none; border-radius: 9px; font-size: 1.08em; font-weight: 700; padding: 14px 0; margin-top: auto; margin-bottom: 0; box-shadow: 0 2px 8px #e0e7ef; cursor: pointer; transition: background 0.15s; color: #fff; text-decoration: none; display: block; letter-spacing: 0.01em;}
     .plan .cta:hover { background: linear-gradient(90deg, #214dbd 60%, #265ae8 100%);}
     .faq-section { text-align: center; padding: 40px 0 35px 0; max-width: 900px; margin: 0 auto;}
@@ -275,9 +249,7 @@
     .footer-copyright { border-top: 1px solid #24262d; text-align: center; color: #777; font-size: 0.97em; padding: 18px 0 16px 0; margin-top: 14px; letter-spacing: 0.01em;}
     @media (max-width: 900px) {
       .container { max-width: 98vw; }
-      .plans { flex-direction: column; gap: 24px; }
-      .plan { max-width: 420px; margin: 0 auto 24px auto; }
-      .feature-list { grid-template-columns:1fr; }
+      .feature-list, .plans { grid-template-columns:1fr; }
       .hero-buttons { flex-direction: column; gap: 10px;}
     }
     @media (max-width: 800px) {
@@ -290,146 +262,10 @@
     @media (max-width: 600px) {
       .container { padding: 0 10px;}
       .hero { padding: 38px 0 20px 0; }
-      .feature { padding: 22px 10px 18px 10px;}
+      .feature, .plan { padding: 22px 10px 18px 10px;}
     }
-    .pos-preview-section {
-  padding: 44px 0 24px 0;
-  text-align: center;
-}
-.pos-preview-title {
-  font-size: 2em;
-  font-weight: 800;
-  color: #24306b;
-  margin-bottom: 28px;
-  letter-spacing: -1px;
-}
-.pos-preview-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 38px;
-  max-width: 850px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-}
-.pos-preview-img-wrap {
-  background: #fff;
-  box-shadow: 0 2px 24px #e8ebfa;
-  border-radius: 22px;
-  padding: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 230px;
-  max-width: 340px;
-}
-.pos-preview-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 14px;
-  box-shadow: 0 2px 10px #e0e4f7;
-  border: 1.5px solid #e5e9f7;
-}
-.pos-preview-desc {
-  text-align: left;
-  max-width: 350px;
-  font-size: 1.12em;
-  color: #1d2340;
-  margin: 0 auto;
-}
-.pos-preview-desc ul {
-  margin: 14px 0 0 0;
-  padding-left: 22px;
-  color: #3550b2;
-  font-size: 1em;
-}
-@media (max-width: 900px) {
-  .pos-preview-content {
-    flex-direction: column;
-    gap: 26px;
-  }
-  .pos-preview-desc { text-align: center; }
-}
-.pos-multishots {
-  display: flex;
-  gap: 22px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 18px;
-}
-.pos-multishots > div {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 2px 14px #e9ebfa;
-  padding: 10px 10px 7px 10px;
-  max-width: 210px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.pos-multishots img {
-  width: 100%;
-  border-radius: 11px;
-  margin-bottom: 7px;
-  box-shadow: 0 1px 8px #eceffa;
-  border: 1.2px solid #e8eaf4;
-}
-.pos-caption {
-  font-size: 0.97em;
-  color: #2e2e3d;
-  margin-bottom: 2px;
-  text-align: center;
-  font-weight: 500;
-}
-.pos-multishots-note {
-  font-size: 1em;
-  color: #4d5274;
-  text-align: center;
-  margin: 2px 0 15px 0;
-}
-@media (max-width: 900px) {
-  .pos-multishots { gap: 11px; }
-  .pos-multishots > div { max-width: 140px; }
-}
-@media (max-width: 600px) {
-  .pos-multishots {
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
-  .pos-multishots > div { max-width: 95vw; }
-}
-
-.plan-price-row {
-  display: flex;
-  align-items: flex-end;
-  gap: 2px;
-  margin-bottom: 10px;
-}
-.plan-currency {
-  font-size: 2em;
-  font-weight: 500;
-  color: #191919;
-  line-height: 1;
-}
-.plan-price-main {
-  font-size: 2.5em;
-  font-weight: 700;
-  color: #191919;
-  letter-spacing: -1px;
-  margin-left: 3px;
-  margin-right: 2px;
-  line-height: 1;
-}
-.plan-permonth {
-  font-size: 1em;
-  color: #444;
-  font-weight: 500;
-  margin-left: 3px;
-  line-height: 1.1;
-}
-
-
+    img[loading="lazy"] { filter: blur(0.02em); transition: filter .15s; }
+    img[loading="lazy"]:not([src*="data:image"]) { filter: none; }
   </style>
 </head>
 <body>
@@ -438,13 +274,13 @@
   <nav class="main-navbar">
     <div class="nav-content">
       <div class="nav-logo">
-        <img src="logo.png" alt="Strukly Logo" />
+        <img src="logo.png" alt="Strukly Logo" loading="lazy" />
         <span class="nav-logo-text">strukly<span>.co</span></span>
       </div>
       <ul class="nav-menu">
         <li><a href="#" class="active">Home</a></li>
         <li><a href="#features">Features</a></li>
-        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#why">Benefits</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
@@ -459,7 +295,7 @@
     <div id="navMobile" class="nav-mobile-menu" style="display:none;">
       <div class="nav-mobile-header">
         <div class="nav-mobile-logo">
-          <img src="logo.png" alt="Strukly Logo" style="height:22px;vertical-align:middle;margin-right:7px;">
+          <img src="logo.png" alt="Strukly Logo" style="height:22px;vertical-align:middle;margin-right:7px;" loading="lazy">
           <span class="nav-mobile-logo-text">strukly<span>.co</span></span>
         </div>
         <button class="nav-mobile-close" aria-label="Close Menu" onclick="closeNav()">&times;</button>
@@ -467,209 +303,171 @@
       <ul class="nav-mobile-list">
         <li><a href="#" class="active" onclick="closeNav()">Home</a></li>
         <li><a href="#features" onclick="closeNav()">Features</a></li>
-        <li><a href="#benefits" onclick="closeNav()">Benefits</a></li>
+        <li><a href="#why" onclick="closeNav()">Benefits</a></li>
         <li><a href="#pricing" onclick="closeNav()">Pricing</a></li>
         <li><a href="#faq" onclick="closeNav()">FAQ</a></li>
       </ul>
     </div>
   </nav>
-  <!-- END NAV HEADER -->
 
   <div class="container">
 
     <!-- HERO SECTION -->
     <section class="hero">
-      <h1>POS & QR Payment for Modern Outlets</h1>
+      <h1>
+        <span style="color:#265ae8;font-weight:900;">Smart POS for F&amp;B and Retail</span>
+        <br>
+        <span style="font-size:0.7em;font-weight:700;color:#24306b;">Cloud based. Fast. Hassle free.</span>
+      </h1>
       <div class="sub">
-        <b>Strukly</b> helps F&B and retail manage orders, print receipts instantly, and monitor sales—without the hassle.<br>
-        <span style="color:#488;">One platform for all your outlets, ready to use in minutes.</span>
+        Run your business better, accept QR payments, manage orders, track inventory, and view sales reports instantly, from anywhere.
       </div>
       <div class="hero-buttons">
         <a href="#pricing" class="cta-main">Start 14-Day Free Trial</a>
-        <a href="#features" class="cta-learn">Learn More</a>
+        <a href="#why" class="cta-learn">Why Strukly?</a>
       </div>
       <div class="users">Trusted by: Vapebay, Drinkology</div>
     </section>
-<!-- SISIPKAN INI SETELAH HERO SECTION -->
-<section class="pos-preview-section">
-  <h2 class="pos-preview-title">See Strukly POS in Action</h2>
-  
-  <!-- GRID Gambar -->
-  <div class="pos-multishots">
-    <div>
-      <img src="pos.png" alt="Cashier POS" />
-      <div class="pos-caption">Cashier POS</div>
-    </div>
-    <div>
-      <img src="mail_closing.png" alt="Closing Mail Report" />
-      <div class="pos-caption">Closing Mail Report</div>
-    </div>
-    <div>
-      <img src="qr_order.png" alt="QR Order" />
-      <div class="pos-caption">QR Order</div>
-    </div>
-    <div>
-      <img src="slider.png" alt="Customer Display Slider"/>
-      <div class="pos-caption">Customer Display</div>
-    </div>
-  </div>
-  <div class="pos-multishots-note">Easy to use on all Device!</div>
 
-  <!-- SLIDER Splide -->
-  <div id="posSplide" class="splide" style="max-width:340px;margin:0 auto 10px auto;">
-    <div class="splide__track">
-      <ul class="splide__list">
-        <li class="splide__slide">
-          <img src="pos.png" alt="Cashier POS" />
-        </li>
-        <li class="splide__slide">
-          <img src="mail_closing.png" alt="Closing Mail Report" />
-        </li>
-        <li class="splide__slide">
-          <img src="qr_order.png" alt="QR Order" />
-        </li>
-        <li class="splide__slide">
-          <img src="slider.png" alt="Customer Slider" />
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
+    <!-- GALLERY SECTION -->
+    <section class="benefits-section" style="padding-bottom:0;">
+      <h2 style="font-size:2em; font-weight:800; color:#24306b; margin-bottom:26px;">See Strukly POS in Action</h2>
+      <div style="display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-bottom:18px;">
+        <div style="background:#fff;border-radius:18px;box-shadow:0 2px 14px #e9ebfa;padding:10px;max-width:200px;display:flex;flex-direction:column;align-items:center;">
+          <img src="pos.png" alt="Cashier POS" loading="lazy" style="width:100%;border-radius:11px;margin-bottom:7px;box-shadow:0 1px 8px #eceffa;border:1.2px solid #e8eaf4;">
+          <div style="font-size:0.97em;color:#2e2e3d;font-weight:500;">Cashier POS</div>
+        </div>
+        <div style="background:#fff;border-radius:18px;box-shadow:0 2px 14px #e9ebfa;padding:10px;max-width:200px;display:flex;flex-direction:column;align-items:center;">
+          <img src="mail_closing.png" alt="Closing Mail Report" loading="lazy" style="width:100%;border-radius:11px;margin-bottom:7px;box-shadow:0 1px 8px #eceffa;border:1.2px solid #e8eaf4;">
+          <div style="font-size:0.97em;color:#2e2e3d;font-weight:500;">Closing Mail Report</div>
+        </div>
+        <div style="background:#fff;border-radius:18px;box-shadow:0 2px 14px #e9ebfa;padding:10px;max-width:200px;display:flex;flex-direction:column;align-items:center;">
+          <img src="qr_order.png" alt="QR Order" loading="lazy" style="width:100%;border-radius:11px;margin-bottom:7px;box-shadow:0 1px 8px #eceffa;border:1.2px solid #e8eaf4;">
+          <div style="font-size:0.97em;color:#2e2e3d;font-weight:500;">QR Order</div>
+        </div>
+        <div style="background:#fff;border-radius:18px;box-shadow:0 2px 14px #e9ebfa;padding:10px;max-width:200px;display:flex;flex-direction:column;align-items:center;">
+          <img src="slider.png" alt="Customer Display Slider" loading="lazy" style="width:100%;border-radius:11px;margin-bottom:7px;box-shadow:0 1px 8px #eceffa;border:1.2px solid #e8eaf4;">
+          <div style="font-size:0.97em;color:#2e2e3d;font-weight:500;">Customer Display</div>
+        </div>
+      </div>
+      <div style="font-size:1em; color:#4d5274; text-align:center;margin:2px 0 15px 0;">Easy to use on all devices!</div>
+    </section>
 
-
-<!-- WHY STRUKLY SECTION (ADVANTAGE vs COMPETITOR) -->
-<section class="benefits-section" style="padding-bottom:10px;">
-  <h2 style="font-size:2em; font-weight:800; color:#24306b; margin-bottom:26px;">Why Choose Strukly Over Others?</h2>
-  <div class="benefits-list" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;max-width:900px;margin:0 auto;">
-<div class="benefit" style="background:#fff;border-radius:14px;box-shadow:0 2px 16px #ecf1fc;padding:24px 16px;display:flex;align-items:flex-start;gap:16px;text-align:left;">
-  <span class="benefit-emoji" style="font-size:2em;line-height:1;">☁️</span>
-  <div>
-    <div style="font-size:1.28em;font-weight:700;line-height:1.18;">Truly Cloud-Based & Always Synced</div>
-    <div style="font-size:1em;font-weight:400;color:rgb(0, 0, 0);">Access your POS anytime, anywhere. No server maintenance. All data is always up-to-date, even across many stores.</div>
-  </div>
-</div>
-<div class="benefit" style="background:#fff;border-radius:14px;box-shadow:0 2px 16px #ecf1fc;padding:24px 16px;display:flex;align-items:flex-start;gap:16px;text-align:left;">
-  <span class="benefit-emoji" style="font-size:2em;line-height:1;">🔌</span>
-  <div>
-    <div style="font-size:1.18em;font-weight:700;line-height:1.18;">Works Online & Offline</div>
-    <div style="font-size:1em;font-weight:400;color:rgb(0, 0, 0);">Sell and take orders even if your internet drops. Strukly syncs automatically once you’re back online.</div>
-  </div>
-</div>
-<div class="benefit" style="background:#fff;border-radius:14px;box-shadow:0 2px 16px #ecf1fc;padding:24px 16px;display:flex;align-items:flex-start;gap:16px;text-align:left;">
-  <span class="benefit-emoji" style="font-size:2em;line-height:1;">⚡</span>
-  <div>
-    <div style="font-size:1.18em;font-weight:700;line-height:1.18;">Lightning-Fast Setup & Support</div>
-    <div style="font-size:1em;font-weight:400;color:rgb(0, 0, 0);">Go live in minutes. Get direct help via WhatsApp or email, no waiting days for answers.</div>
-  </div>
-</div>
-<div class="benefit" style="background:#fff;border-radius:14px;box-shadow:0 2px 16px #ecf1fc;padding:24px 16px;display:flex;align-items:flex-start;gap:16px;text-align:left;">
-  <span class="benefit-emoji" style="font-size:2em;line-height:1;">🎯</span>
-  <div>
-    <div style="font-size:1.18em;font-weight:700;line-height:1.18;">Built for F&B and Retail Growth</div>
-    <div style="font-size:1em;font-weight:400;color:rgb(0, 0, 0);">All-in-one solution: orders, inventory, reporting, loyalty, and payment in one platform. Used by modern brands, proven at scale.</div>
-  </div>
-</div>
-
-  </div>
-  <div style="margin-top:32px;">
-    <a href="#pricing" class="cta-main" style="padding:15px 44px;font-size:1.18em;">Try Strukly Free for 14 Days</a>
-    <div style="font-size:1.07em; color:#2957b5; margin-top:6px;">No credit card required</div>
-  </div>
-</section>
-
-<!-- MAIN FEATURES SECTION, ENGLISH VERSION -->
-<section style="text-align:center;padding:22px 0 32px 0;">
-  <h2 style="font-size:2em;font-weight:800;color:#24306b;margin-bottom:18px;letter-spacing:-1px;">
-    Key Features
-  </h2>
-  <ul style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;list-style:none;padding:0;max-width:950px;margin:0 auto;text-align:left;">
-    <li style="background:#fff;border-radius:13px;box-shadow:0 2px 12px #ecf1fc;padding:22px 18px;display:flex;gap:11px;">
-      <span style="font-size:1.5em;">✅</span>
-      QR Payment at POS, auto-validation, instant printing
-    </li>
-    <li style="background:#fff;border-radius:13px;box-shadow:0 2px 12px #ecf1fc;padding:22px 18px;display:flex;gap:11px;">
-      <span style="font-size:1.5em;">📊</span>
-      Real-time dashboard, multi-outlet view
-    </li>
-    <li style="background:#fff;border-radius:13px;box-shadow:0 2px 12px #ecf1fc;padding:22px 18px;display:flex;gap:11px;">
-      <span style="font-size:1.5em;">🍳</span>
-      Kitchen screen, orders go straight to the kitchen
-    </li>
-    <li style="background:#fff;border-radius:13px;box-shadow:0 2px 12px #ecf1fc;padding:22px 18px;display:flex;gap:11px;">
-      <span style="font-size:1.5em;">🎁</span>
-      Membership & loyalty points, birthday promos
-    </li>
-    <li style="background:#fff;border-radius:13px;box-shadow:0 2px 12px #ecf1fc;padding:22px 18px;display:flex;gap:11px;">
-      <span style="font-size:1.5em;">📦</span>
-      Live inventory display, automatic stock updates
-    </li>
-    <li style="background:#fff;border-radius:13px;box-shadow:0 2px 12px #ecf1fc;padding:22px 18px;display:flex;gap:11px;">
-      <span style="font-size:1.5em;">🖥️</span>
-      Customer display with promo slider
-    </li>
-    <li style="background:#fff;border-radius:13px;box-shadow:0 2px 12px #ecf1fc;padding:22px 18px;display:flex;gap:11px;">
-      <span style="font-size:1.5em;">📧</span>
-      Automated email closing report
-    </li>
-    <li style="background:#fff;border-radius:13px;box-shadow:0 2px 12px #ecf1fc;padding:22px 18px;display:flex;gap:11px;">
-      <span style="font-size:1.5em;">🔒</span>
-      Extra security: email approval & OTP for cashier closing
-    </li>
-    <li style="background:#fff;border-radius:13px;box-shadow:0 2px 12px #ecf1fc;padding:22px 18px;display:flex;gap:11px;">
-      <span style="font-size:1.5em;">🔗</span>
-      QR order, auto QRIS payment, seamless to kitchen
-    </li>
-    <li style="background:#fff;border-radius:13px;box-shadow:0 2px 12px #ecf1fc;padding:22px 18px;display:flex;gap:11px;">
-      <span style="font-size:1.5em;">💳</span>
-      Flexible payment methods, easy switching, no refund needed
-    </li>
-  </ul>
-  <div style="margin-top:28px;">
-    <a href="#pricing" class="cta-main" style="padding:15px 44px;font-size:1.13em;">See Our Plans</a>
-  </div>
-</section>
-
-    <!-- BENEFITS SECTION -->
-    <section class="benefits-section" id="benefits">
-      <h2>Why Businesses Choose Strukly</h2>
+    <!-- WHY CHOOSE STRUKLY (ADVANTAGE) -->
+    <section class="benefits-section" id="why" style="padding-bottom:10px;">
+      <h2 style="font-size:2em; font-weight:800; color:#24306b; margin-bottom:26px;">Why Choose Strukly Over Others?</h2>
       <div class="benefits-list">
         <div class="benefit">
-          <span class="benefit-emoji">🚀</span>
+          <span class="benefit-emoji">☁️</span>
           <div>
-            <b>Fast Setup, Zero Hassle</b><br>
-            Get your POS running in minutes—no installation or training needed.
+            <div style="font-size:1.23em;font-weight:700;line-height:1.18;">Truly Cloud-Based</div>
+            <div style="font-size:1em;color:#232;">Access anywhere, anytime. No server headaches.</div>
           </div>
         </div>
         <div class="benefit">
-          <span class="benefit-emoji">🔒</span>
+          <span class="benefit-emoji">🔌</span>
           <div>
-            <b>Secure & Reliable</b><br>
-            Your data and transactions are protected with industry-grade security.
+            <div style="font-size:1.13em;font-weight:700;line-height:1.18;">Works Offline</div>
+            <div style="font-size:1em;color:#232;">Accept orders & payments even when the internet drops. Syncs auto when online.</div>
           </div>
         </div>
         <div class="benefit">
-          <span class="benefit-emoji">📈</span>
+          <span class="benefit-emoji">⚡</span>
           <div>
-            <b>Realtime Insights</b><br>
-            Instantly track sales, outlet performance, and inventory—anytime, anywhere.
+            <div style="font-size:1.13em;font-weight:700;line-height:1.18;">Lightning Setup & Support</div>
+            <div style="font-size:1em;color:#232;">Get started in minutes. Support via WhatsApp & Email, no waiting days.</div>
           </div>
         </div>
         <div class="benefit">
-          <span class="benefit-emoji">🤝</span>
+          <span class="benefit-emoji">🎯</span>
           <div>
-            <b>Customer Loyalty Growth</b><br>
-            Built-in points, repeat order, and birthday promo keep your customers coming back.
-          </div>
-        </div>
-        <div class="benefit">
-          <span class="benefit-emoji">💡</span>
-          <div>
-            <b>Flexible for F&B and Retail</b><br>
-            One solution for modern cafes, restaurants, kiosks, and retail outlets.
+            <div style="font-size:1.13em;font-weight:700;line-height:1.18;">All-in-One Platform</div>
+            <div style="font-size:1em;color:#232;">POS, inventory, reporting, loyalty, and payment in one. Proven for modern brands.</div>
           </div>
         </div>
       </div>
+      <div style="margin-top:32px;">
+        <a href="#pricing" class="cta-main" style="padding:15px 44px;font-size:1.18em;">Try Strukly Free for 14 Days</a>
+        <div style="font-size:1.07em; color:#2957b5; margin-top:6px;">No credit card required</div>
+      </div>
     </section>
+
+    <!-- FEATURES GRID -->
+    <section style="text-align:center;padding:22px 0 32px 0;" id="features">
+      <h2 style="font-size:2em;font-weight:800;color:#24306b;margin-bottom:18px;letter-spacing:-1px;">
+        Key Features
+      </h2>
+      <div class="feature-list">
+        <div class="feature"><span style="font-size:1.5em;">✅</span> <div><b>QR Payment at POS</b><br>Instant receipt printing, QRIS validation</div></div>
+        <div class="feature"><span style="font-size:1.5em;">📊</span> <div><b>Realtime Dashboard</b><br>Sales, outlet, and inventory monitoring</div></div>
+        <div class="feature"><span style="font-size:1.5em;">🍳</span> <div><b>Kitchen Screen</b><br>Orders sent directly to kitchen</div></div>
+        <div class="feature"><span style="font-size:1.5em;">🎁</span> <div><b>Loyalty & Birthday Promo</b><br>Membership points and auto rewards</div></div>
+        <div class="feature"><span style="font-size:1.5em;">📦</span> <div><b>Live Inventory</b><br>Auto stock update & warnings</div></div>
+        <div class="feature"><span style="font-size:1.5em;">🖥️</span> <div><b>Promo Slider</b><br>Show promos on customer display</div></div>
+        <div class="feature"><span style="font-size:1.5em;">📧</span> <div><b>Automated Reports</b><br>Email closing & daily summaries</div></div>
+        <div class="feature"><span style="font-size:1.5em;">🔒</span> <div><b>Security by Design</b><br>Email OTP for cashier closing</div></div>
+        <div class="feature"><span style="font-size:1.5em;">🔗</span> <div><b>QR Order</b><br>Customers order via QR, goes direct to kitchen</div></div>
+        <div class="feature"><span style="font-size:1.5em;">💳</span> <div><b>Flexible Payments</b><br>Switch methods, no refund hassle</div></div>
+      </div>
+      <div style="margin-top:28px;">
+        <a href="#pricing" class="cta-main" style="padding:15px 44px;font-size:1.13em;">See Our Plans</a>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL SECTION -->
+    <section class="testimoni-section" style="margin:44px 0 28px 0;text-align:center;">
+      <h2 style="font-size:2em; font-weight:800; color:#24306b; margin-bottom:28px; letter-spacing:-1px;">
+        What Our Users Say
+      </h2>
+      <div id="testiSplide" class="splide" style="max-width:540px;margin:0 auto;">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide">
+              <div style="background:#fff; border-radius:13px; box-shadow:0 2px 14px #e2e9fa; padding:30px 22px;">
+                <div style="font-size:1.13em; color:#1c2246; margin-bottom:10px;">"Strukly makes cashier operations super fast and sends daily sales reports right to our inbox."</div>
+                <div style="font-weight:700; color:#2957b5;">Sudo Brew</div>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div style="background:#fff; border-radius:13px; box-shadow:0 2px 14px #e2e9fa; padding:30px 22px;">
+                <div style="font-size:1.13em; color:#1c2246; margin-bottom:10px;">"Managing tables and orders is easy from the dashboard. Perfect for restaurants with multiple cashiers!"</div>
+                <div style="font-weight:700; color:#2957b5;">Bebek Ningrat</div>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div style="background:#fff; border-radius:13px; box-shadow:0 2px 14px #e2e9fa; padding:30px 22px;">
+                <div style="font-size:1.13em; color:#1c2246; margin-bottom:10px;">"The real-time dashboard and sales reports are super useful. Support is fast and responsive."</div>
+                <div style="font-weight:700; color:#2957b5;">Drinkology</div>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div style="background:#fff; border-radius:13px; box-shadow:0 2px 14px #e2e9fa; padding:30px 22px;">
+                <div style="font-size:1.13em; color:#1c2246; margin-bottom:10px;">"Strukly is simple yet powerful. Multi-outlet support makes it easy to manage our busy stores."</div>
+                <div style="font-weight:700; color:#2957b5;">Vapebay</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top:32px;">
+        <a href="#pricing" class="cta-main" style="padding:15px 46px;font-size:1.17em;">Start Free 14-Day Trial</a>
+        <div style="font-size:1.07em; color:#2957b5; margin-top:6px;">No credit card required</div>
+      </div>
+    </section>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        new Splide('#testiSplide', {
+          type: 'loop',
+          perPage: 1,
+          autoplay: true,
+          interval: 4000,
+          pauseOnHover: true,
+          arrows: false,
+          pagination: true,
+          height: 'auto'
+        }).mount();
+      });
+    </script>
 
     <!-- PRICING SECTION -->
     <section class="pricing-section" id="pricing">
@@ -692,13 +490,13 @@
             <li>Cash In, Cash Out</li>
             <li>Multi Print</li>
             <li>Live Dashboard Report</li>
-            <li>Payment Gateaway QR on POS</li>
+            <li>Payment Gateway QR on POS</li>
             <li>Email Closing Summary</li>
             <li>Show Product Qty in POS</li>
             <li>Kitchen Screen</li>
             <li>Basic Loyalty</li>
             <li>Update Inventory Manually</li>
-            <li>Report Pnl</li>
+            <li>Report PnL</li>
             <li>Purchase, Expenses</li>
             <li>Customer Display Slider</li>
             <li>Email Closing & Approval Via Email</li>
@@ -722,7 +520,7 @@
             <li>Cash In, Cash Out</li>
             <li>Multi Print</li>
             <li>Live Dashboard Report</li>
-            <li>Payment Gateaway QR on POS</li>
+            <li>Payment Gateway QR on POS</li>
             <li>Email Closing Summary</li>
             <li>Show Product Qty in POS</li>
             <li>Kitchen Screen</li>
@@ -742,89 +540,161 @@
       </div>
     </section>
 
-    <section class="testimoni-section" style="margin:44px 0 28px 0;text-align:center;">
-  <h2 style="font-size:2em; font-weight:800; color:#24306b; margin-bottom:28px; letter-spacing:-1px;">
-    What Our Users Say
-  </h2>
-  <div id="testiSplide" class="splide" style="max-width:540px;margin:0 auto;">
-    <div class="splide__track">
-      <ul class="splide__list">
-        <li class="splide__slide">
-          <div style="background:#fff; border-radius:13px; box-shadow:0 2px 14px #e2e9fa; padding:30px 22px;">
-            <div style="font-size:1.13em; color:#1c2246; margin-bottom:10px;">"Strukly makes cashier operations super fast and sends daily sales reports right to our inbox."</div>
-            <div style="font-weight:700; color:#2957b5;">Sudo Brew</div>
-          </div>
-        </li>
-        <li class="splide__slide">
-          <div style="background:#fff; border-radius:13px; box-shadow:0 2px 14px #e2e9fa; padding:30px 22px;">
-            <div style="font-size:1.13em; color:#1c2246; margin-bottom:10px;">"Managing tables and orders is easy from the dashboard. Perfect for restaurants with multiple cashiers!"</div>
-            <div style="font-weight:700; color:#2957b5;">Bebek Ningrat</div>
-          </div>
-        </li>
-        <li class="splide__slide">
-          <div style="background:#fff; border-radius:13px; box-shadow:0 2px 14px #e2e9fa; padding:30px 22px;">
-            <div style="font-size:1.13em; color:#1c2246; margin-bottom:10px;">"The real-time dashboard and sales reports are super useful. Support is fast and responsive."</div>
-            <div style="font-weight:700; color:#2957b5;">Drinkology</div>
-          </div>
-        </li>
-        <li class="splide__slide">
-          <div style="background:#fff; border-radius:13px; box-shadow:0 2px 14px #e2e9fa; padding:30px 22px;">
-            <div style="font-size:1.13em; color:#1c2246; margin-bottom:10px;">"Strukly is simple yet powerful. Multi-outlet support makes it easy to manage our busy stores."</div>
-            <div style="font-weight:700; color:#2957b5;">Vapebay</div>
-          </div>
-        </li>
-      </ul>
+<!-- FAQ SECTION (plus/minus accordion, warna tema strukly) -->
+<style>
+.faq-section {
+  max-width: 900px;
+  margin: 40px auto 0 auto;
+  font-family: 'Inter', Arial, sans-serif;
+  color: #21254a;
+}
+.faq-section h2 {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 36px;
+  color: #24306b;
+}
+.faq-accordion {
+  margin: 0 auto;
+}
+.faq-item-acc {
+  background: #fff;
+  border-radius: 13px;
+  box-shadow: 0 2px 14px #e2e9fa;
+  margin-bottom: 18px;
+  padding: 0;
+  color: #21254a;
+  transition: box-shadow 0.14s;
+}
+.faq-question-acc {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 28px 22px 22px;
+  font-size: 1.11em;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  transition: background 0.12s;
+  border-radius: 13px;
+  text-align: left;
+  color: #24306b;
+}
+.faq-question-acc:hover {
+  background: #e5f0ff;
+}
+.faq-icon {
+  font-size: 1.8em;
+  font-weight: 400;
+  color: #2957b5;
+  margin-left: 16px;
+  transition: transform 0.2s;
+  line-height: 1;
+  user-select: none;
+}
+.faq-answer-acc {
+  padding: 0 28px 22px 60px;
+  color: #4d5274;
+  font-size: 1em;
+  display: none;
+  line-height: 1.7;
+  background: #fff;
+}
+.faq-item-acc.open .faq-answer-acc {
+  display: block;
+  animation: fadeInFAQ .17s;
+}
+@keyframes fadeInFAQ {
+  from { opacity: 0; transform: translateY(-10px);}
+  to { opacity: 1; transform: none;}
+}
+.faq-item-acc.open .faq-icon {
+  transform: rotate(180deg);
+}
+@media (max-width: 600px) {
+  .faq-answer-acc { padding-left: 22px; }
+  .faq-question-acc { padding: 16px 14px 16px 12px; }
+}
+</style>
+
+<section class="faq-section" id="faq">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-accordion">
+    <div class="faq-item-acc open">
+      <button class="faq-question-acc" onclick="toggleFAQ(this)">
+        How fast can I go live with Strukly?
+        <span class="faq-icon">−</span>
+      </button>
+      <div class="faq-answer-acc">
+        You can be up and running in minutes. Just sign up, set up your outlets and products, and start using Strukly immediately.
+      </div>
     </div>
-  </div>
-  <div style="margin-top:32px;">
-    <a href="#pricing" class="cta-main" style="padding:15px 46px;font-size:1.17em;">Start Free 14-Day Trial</a>
-    <div style="font-size:1.07em; color:#2957b5; margin-top:6px;">No credit card required</div>
+    <div class="faq-item-acc">
+      <button class="faq-question-acc" onclick="toggleFAQ(this)">
+        Do I need any special hardware?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer-acc">
+        No. Strukly works on any browser and most devices (laptop, tablet, POS terminal). For receipt printing, just connect any standard receipt printer.
+      </div>
+    </div>
+    <div class="faq-item-acc">
+      <button class="faq-question-acc" onclick="toggleFAQ(this)">
+        Can I use my own QRIS for payments?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer-acc">
+        Yes! Strukly is compatible with QRIS and supports instant validation for seamless customer payment experiences.
+      </div>
+    </div>
+    <div class="faq-item-acc">
+      <button class="faq-question-acc" onclick="toggleFAQ(this)">
+        Can Strukly be used offline?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer-acc">
+        Yes, Strukly supports offline mode. You can keep selling and taking orders even if the internet drops. All data will sync automatically once the connection is back.
+      </div>
+    </div>
+    <div class="faq-item-acc">
+      <button class="faq-question-acc" onclick="toggleFAQ(this)">
+        What happens after the free trial?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer-acc">
+        You can choose a plan and continue using all your data and settings—no disruption. If you don’t upgrade, your data is safe and can be exported anytime.
+      </div>
+    </div>
+    <div class="faq-item-acc">
+      <button class="faq-question-acc" onclick="toggleFAQ(this)">
+        Is there a support team if I need help?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer-acc">
+        Absolutely. Our helpdesk is ready to support you by email or WhatsApp, including onboarding and troubleshooting.
+      </div>
+    </div>
   </div>
 </section>
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    new Splide('#testiSplide', {
-      type: 'loop',
-      perPage: 1,
-      autoplay: true,
-      interval: 4000,
-      pauseOnHover: true,
-      arrows: false,
-      pagination: true,
-      height: 'auto'
-    }).mount();
+function toggleFAQ(btn) {
+  const item = btn.closest('.faq-item-acc');
+  const wasOpen = item.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.faq-item-acc').forEach(i => {
+    i.classList.remove('open');
+    i.querySelector('.faq-icon').textContent = '+';
   });
+  if (!wasOpen) {
+    item.classList.add('open');
+    item.querySelector('.faq-icon').textContent = '−';
+  }
+}
 </script>
-
-
-
-
-    <!-- FAQ SECTION -->
-    <section class="faq-section" id="faq">
-      <h2>Frequently Asked Questions</h2>
-      <div class="faq-list">
-        <div class="faq-item">
-          <div class="faq-q">How fast can I go live with Strukly?</div>
-          <div class="faq-a">You can be up and running in minutes. Just sign up, set up your outlets and products, and start using Strukly immediately.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Do I need any special hardware?</div>
-          <div class="faq-a">No. Strukly works on any browser and most devices (laptop, tablet, POS terminal). For receipt printing, just connect any standard receipt printer.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Can I use my own QRIS for payments?</div>
-          <div class="faq-a">Yes! Strukly is compatible with QRIS and supports instant validation for seamless customer payment experiences.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">What happens after the free trial?</div>
-          <div class="faq-a">You can choose a plan and continue using all your data and settings—no disruption. If you don’t upgrade, your data is safe and can be exported anytime.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-q">Is there a support team if I need help?</div>
-          <div class="faq-a">Absolutely. Our helpdesk is ready to support you by email or WhatsApp, including onboarding and troubleshooting.</div>
-        </div>
-      </div>
-    </section>
 
     <div class="links-below">
       <a href="/terms.html">Terms</a> • <a href="/privacy.html">Privacy</a>
@@ -854,9 +724,9 @@
         <div class="footer-contact">
           <div><a href="mailto:helpdesk@tilabs.id">helpdesk@tilabs.id</a></div>
           <div>
-              <a href="https://wa.me/6281915898999" target="_blank" rel="noopener">
+            <a href="https://wa.me/6281915898999" target="_blank" rel="noopener">
               (+62) 819-1589-8999
-              </a>
+            </a>
           </div>
           <div>
             Cleon Park Jakarta Garden City<br>
@@ -870,28 +740,31 @@
     </div>
   </footer>
   <!-- FOOTER END -->
-   <script>
-  function openNav() {
-    document.getElementById('navMobile').style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  }
-  function closeNav() {
-    document.getElementById('navMobile').style.display = 'none';
-    document.body.style.overflow = '';
-  }
-</script>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    new Splide('#posSplide', {
-      type   : 'loop',
-      perPage: 1,
-      autoplay: true,
-      interval: 2500,
-      arrows : true,
-      pagination: true,
-    }).mount();
-  });
-</script>
+
+  <script>
+    function openNav() {
+      document.getElementById('navMobile').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNav() {
+      document.getElementById('navMobile').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+      if (window.Splide) {
+        new Splide('#testiSplide', {
+          type: 'loop',
+          perPage: 1,
+          autoplay: true,
+          interval: 4000,
+          pauseOnHover: true,
+          arrows: false,
+          pagination: true,
+          height: 'auto'
+        }).mount();
+      }
+    });
+  </script>
 
 </body>
 </html>
