@@ -7,6 +7,9 @@
   <meta name="description" content="All-in-one POS for F&B & Retail outlets. Payments, orders, and automated reporting. Free 14-day trial!">
   <link rel="icon" type="image/png" href="logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;900&display=swap" rel="stylesheet">
+    <!-- Splide.js CDN for slider -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js"></script>
   <style>
     body {
       font-family: 'Inter', Arial, sans-serif;
@@ -289,6 +292,115 @@
       .hero { padding: 38px 0 20px 0; }
       .feature { padding: 22px 10px 18px 10px;}
     }
+    .pos-preview-section {
+  padding: 44px 0 24px 0;
+  text-align: center;
+}
+.pos-preview-title {
+  font-size: 2em;
+  font-weight: 800;
+  color: #24306b;
+  margin-bottom: 28px;
+  letter-spacing: -1px;
+}
+.pos-preview-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 38px;
+  max-width: 850px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.pos-preview-img-wrap {
+  background: #fff;
+  box-shadow: 0 2px 24px #e8ebfa;
+  border-radius: 22px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 230px;
+  max-width: 340px;
+}
+.pos-preview-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px #e0e4f7;
+  border: 1.5px solid #e5e9f7;
+}
+.pos-preview-desc {
+  text-align: left;
+  max-width: 350px;
+  font-size: 1.12em;
+  color: #1d2340;
+  margin: 0 auto;
+}
+.pos-preview-desc ul {
+  margin: 14px 0 0 0;
+  padding-left: 22px;
+  color: #3550b2;
+  font-size: 1em;
+}
+@media (max-width: 900px) {
+  .pos-preview-content {
+    flex-direction: column;
+    gap: 26px;
+  }
+  .pos-preview-desc { text-align: center; }
+}
+.pos-multishots {
+  display: flex;
+  gap: 22px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.pos-multishots > div {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 14px #e9ebfa;
+  padding: 10px 10px 7px 10px;
+  max-width: 210px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pos-multishots img {
+  width: 100%;
+  border-radius: 11px;
+  margin-bottom: 7px;
+  box-shadow: 0 1px 8px #eceffa;
+  border: 1.2px solid #e8eaf4;
+}
+.pos-caption {
+  font-size: 0.97em;
+  color: #2e2e3d;
+  margin-bottom: 2px;
+  text-align: center;
+  font-weight: 500;
+}
+.pos-multishots-note {
+  font-size: 1em;
+  color: #4d5274;
+  text-align: center;
+  margin: 2px 0 15px 0;
+}
+@media (max-width: 900px) {
+  .pos-multishots { gap: 11px; }
+  .pos-multishots > div { max-width: 140px; }
+}
+@media (max-width: 600px) {
+  .pos-multishots {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .pos-multishots > div { max-width: 95vw; }
+}
+
+
   </style>
 </head>
 <body>
@@ -349,6 +461,45 @@
       </div>
       <div class="users">Trusted by: Vapebay, Drinkology</div>
     </section>
+<!-- SISIPKAN INI SETELAH HERO SECTION -->
+<section class="pos-preview-section">
+  <h2 class="pos-preview-title">See Strukly POS in Action</h2>
+  
+  <!-- GRID Gambar -->
+  <div class="pos-multishots">
+    <div>
+      <img src="https://dummyimage.com/320x220/dae4fa/aaa&text=Kasir+POS" alt="Kasir POS" />
+      <div class="pos-caption">POS Kasir</div>
+    </div>
+    <div>
+      <img src="https://dummyimage.com/320x220/dae4fa/aaa&text=Laporan+Penjualan" alt="Laporan POS" />
+      <div class="pos-caption">Laporan Penjualan</div>
+    </div>
+    <div>
+      <img src="https://dummyimage.com/320x220/dae4fa/aaa&text=QR+Pembayaran" alt="QR Pembayaran" />
+      <div class="pos-caption">Pembayaran QRIS</div>
+    </div>
+  </div>
+  <div class="pos-multishots-note">Mudah digunakan di semua perangkat!</div>
+
+  <!-- SLIDER Splide -->
+  <div id="posSplide" class="splide" style="max-width:340px;margin:0 auto 10px auto;">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide">
+          <img src="https://dummyimage.com/320x220/dae4fa/aaa&text=Kasir+POS" alt="Kasir POS" />
+        </li>
+        <li class="splide__slide">
+          <img src="https://dummyimage.com/320x220/dae4fa/aaa&text=Laporan+Penjualan" alt="Laporan POS" />
+        </li>
+        <li class="splide__slide">
+          <img src="https://dummyimage.com/320x220/dae4fa/aaa&text=QR+Pembayaran" alt="QR Pembayaran" />
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 
     <!-- FEATURES GRID -->
     <div class="feature-list" id="features">
@@ -493,8 +644,10 @@
               </a>
           </div>
           <div>
-            Cleon Park Jakarta Garden City<br>
-            Jl. Orchid NO. 7 & 8. Cakung Jakarta Timur 13910
+            Menara Rajawali 7th Floor<br>
+            Jl. DR. Ide Anak Agung Gde Agung Lot #5.1<br>
+            Kawasan Mega Kuningan,<br>
+            Jakarta Selatan, 12950
           </div>
         </div>
       </div>
@@ -514,5 +667,18 @@
     document.body.style.overflow = '';
   }
 </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    new Splide('#posSplide', {
+      type   : 'loop',
+      perPage: 1,
+      autoplay: true,
+      interval: 2500,
+      arrows : true,
+      pagination: true,
+    }).mount();
+  });
+</script>
+
 </body>
 </html>
