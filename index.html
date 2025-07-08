@@ -389,9 +389,70 @@
     .faq-item-acc.open .faq-icon {
       transform: rotate(180deg);
     }
+    
+    /* --- Comparison Table --- */
+    .comparison-section {
+      text-align: center; 
+      padding: 22px 0 32px 0;
+    }
+    .comparison-section h2 {
+      font-size:2em;
+      font-weight:800;
+      color:#24306b;
+      margin-bottom:12px;
+      letter-spacing:-1px;
+    }
+    .comparison-section p {
+      font-size:1.1em; 
+      color:#4d5274; 
+      margin-top:0;
+    }
+    .comparison-container { 
+      overflow-x: auto; 
+      margin-top: 24px;
+      border: 1px solid #dfe8f7;
+      border-radius: 14px;
+      box-shadow: 0 2px 16px #ecf1fc;
+    }
+    .comparison-table { 
+      width: 100%; 
+      min-width: 1300px; /* Adjusted for more columns */
+      border-collapse: collapse;
+      font-size: 1em;
+    }
+    .comparison-table th, .comparison-table td { 
+      padding: 14px 16px; 
+      border: 1px solid #dfe8f7; 
+      text-align: center; 
+      vertical-align: middle;
+      background: #fff;
+    }
+    .comparison-table thead th { 
+      background-color: #f6f8fa; 
+      font-weight: 700;
+      /*
+        Menghapus 'position: sticky' untuk memperbaiki masalah render di beberapa browser
+        saat digeser secara horizontal.
+      */
+    }
+    .comparison-table tbody td:first-child { 
+      text-align: left; 
+      font-weight: 600; 
+      color: #253261; 
+      background: #fbfdff;
+    }
+    .comparison-table .strukly-col { 
+      background-color: #e9f5ff; 
+    }
+    .comparison-table .strukly-header { 
+      background: #265ae8; 
+      color: white; 
+    }
+
     @media (max-width: 600px) {
       .faq-answer-acc { padding-left: 22px; }
       .faq-question-acc { padding: 16px 14px 16px 12px; }
+      .comparison-table { font-size: 0.9em; }
     }
   </style>
 </head>
@@ -406,6 +467,7 @@
       <ul class="nav-menu">
         <li><a href="#" class="active"><span lang="id">Beranda</span><span lang="en">Home</span></a></li>
         <li><a href="#features"><span lang="id">Fitur</span><span lang="en">Features</span></a></li>
+        <li><a href="#comparison"><span lang="id">Perbandingan</span><span lang="en">Comparison</span></a></li>
         <li><a href="#why"><span lang="id">Keunggulan</span><span lang="en">Benefits</span></a></li>
         <li><a href="#pricing"><span lang="id">Harga</span><span lang="en">Pricing</span></a></li>
         <li><a href="#faq">FAQ</a></li>
@@ -435,6 +497,7 @@
       <ul class="nav-mobile-list">
         <li><a href="#" class="active" onclick="closeNav()"><span lang="id">Beranda</span><span lang="en">Home</span></a></li>
         <li><a href="#features" onclick="closeNav()"><span lang="id">Fitur</span><span lang="en">Features</span></a></li>
+        <li><a href="#comparison" onclick="closeNav()"><span lang="id">Perbandingan</span><span lang="en">Comparison</span></a></li>
         <li><a href="#why" onclick="closeNav()"><span lang="id">Keunggulan</span><span lang="en">Benefits</span></a></li>
         <li><a href="#pricing" onclick="closeNav()"><span lang="id">Harga</span><span lang="en">Pricing</span></a></li>
         <li><a href="#faq" onclick="closeNav()">FAQ</a></li>
@@ -596,7 +659,7 @@
       <h2 style="font-size:2em;font-weight:800;color:#24306b;margin-bottom:18px;letter-spacing:-1px;">
         <span lang="id">Fitur Utama</span>
         <span lang="en">Key Features</span>
-      </h2>
+    </h2>
       <div class="feature-list">
         <div class="feature"><span style="font-size:1.5em;">✅</span> <div><b><span lang="id">Pembayaran QR di POS</span><span lang="en">QR Payment at POS</span></b><br><span lang="id">Cetak struk instan, validasi QRIS</span><span lang="en">Instant receipt printing, QRIS validation</span></div></div>
         <div class="feature"><span style="font-size:1.5em;">📊</span> <div><b><span lang="id">Dasbor Real-time</span><span lang="en">Realtime Dashboard</span></b><br><span lang="id">Monitor penjualan, outlet, dan inventaris</span><span lang="en">Sales, outlet, and inventory monitoring</span></div></div>
@@ -617,11 +680,67 @@
       </div>
     </section>
 
+    <section class="comparison-section" id="comparison">
+        <h2>
+            <span lang="id">Bingung Memilih POS Terbaik?</span>
+            <span lang="en">Choosing the Best POS?</span>
+        </h2>
+        <p>
+            <span lang="id">Lihat perbandingan fitur lengkap kami dengan kompetitor.</span>
+            <span lang="en">See our full feature comparison against competitors.</span>
+        </p>
+        <div class="comparison-container">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>
+                          <span lang="id">Fitur Unggulan</span>
+                          <span lang="en">Featured Features</span>
+                        </th>
+                        <th class="strukly-header">Strukly</th>
+                        <th>ESB</th>
+                        <th>Odoo Community</th>
+                        <th>Odoo Enterprise</th>
+                        <th>Moka</th>
+                        <th>Majoo</th>
+                        <th>Olsera</th>
+                        <th>iSeller</th>
+                        <th>Runchise</th>
+                        <th>Raptor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><span lang="id">Sistem POS</span><span lang="en">POS System</span></td><td class="strukly-col">✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+                    <tr><td><span lang="id">Mode Offline</span><span lang="en">Offline Mode</span></td><td class="strukly-col">✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+                    <tr><td><span lang="id">Multi Cabang / Outlet</span><span lang="en">Multi-Branch / Outlet</span></td><td class="strukly-col">✅</td><td>✅</td><td>⚠️</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+                    <tr><td><span lang="id">Manajemen Menu</span><span lang="en">Menu Management</span></td><td class="strukly-col">✅</td><td>✅</td><td>⚠️</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+                    <tr><td><span lang="id">Manajemen Meja</span><span lang="en">Table Management</span></td><td class="strukly-col">✅</td><td>✅</td><td>⚠️</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+                    <tr><td><span lang="id">Poin Loyalitas</span><span lang="en">Loyalty Point</span></td><td class="strukly-col">✅</td><td>✅</td><td>❌</td><td>⚠️</td><td>✅</td><td>⚠️</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+                    <tr><td><span lang="id">Integrasi Pembayaran QRIS Xendit</span><span lang="en">QRIS Xendit Payment Integration</span></td><td class="strukly-col">✅</td><td>✅</td><td>❌</td><td>⚠️</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+                    <tr><td><span lang="id">Layar Dapur (KDS)</span><span lang="en">Kitchen Display System (KDS)</span></td><td class="strukly-col">✅</td><td>✅</td><td>❌</td><td>❌</td><td>⚠️</td><td>✅</td><td>⚠️</td><td>⚠️</td><td>✅</td><td>✅</td></tr>
+                    <tr><td><span lang="id">Integrasi Akuntansi</span><span lang="en">Accounting Integration</span></td><td class="strukly-col">✅</td><td>✅</td><td>⚠️</td><td>✅</td><td>❌</td><td>⚠️</td><td>✅</td><td>⚠️</td><td>✅</td><td>✅</td></tr>
+                    <tr><td><span lang="id">Penjualan Real-time</span><span lang="en">Real-time Sales</span></td><td class="strukly-col">✅</td><td>✅</td><td>⚠️</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+                    <tr><td><span lang="id">Pencegahan Kecurangan</span><span lang="en">Fraud Prevention</span></td><td class="strukly-col">✅</td><td>✅</td><td>⚠️</td><td>✅</td><td>⚠️</td><td>⚠️</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td></tr>
+                    <tr><td><span lang="id">Dasbor & Analitik</span><span lang="en">Dashboard & Analytics</span></td><td class="strukly-col">✅</td><td>✅</td><td>⚠️</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+                    <tr><td><span lang="id">Manajemen Franchise</span><span lang="en">Franchise Management</span></td><td class="strukly-col">✅</td><td>✅</td><td>❌</td><td>⚠️</td><td>⚠️</td><td>⚠️</td><td>⚠️</td><td>✅</td><td>✅</td><td>⚠️</td></tr>
+                    <tr><td><span lang="id">Tipe Pesanan</span><span lang="en">Order Type</span></td><td class="strukly-col">✅</td><td>✅</td><td>⚠️</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+                    <tr><td><span lang="id">Voucher</span><span lang="en">Voucher</span></td><td class="strukly-col">✅</td><td>✅</td><td>❌</td><td>⚠️</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+                    <tr><td><span lang="id">Promo Ulang Tahun (limit 1x/th)</span><span lang="en">Birthday Promotion (limit 1x/yr)</span></td><td class="strukly-col">✅</td><td>⚠️</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>⚠️</td><td>⚠️</td><td>⚠️</td><td>⚠️</td></tr>
+                    <tr><td><span lang="id">Pengecek Cetak Ulang</span><span lang="en">Reprint Checker</span></td><td class="strukly-col">✅</td><td>⚠️</td><td>❌</td><td>⚠️</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>⚠️</td><td>✅</td></tr>
+                    <tr><td><span lang="id">Email Laporan Closing</span><span lang="en">Send Closing Email</span></td><td class="strukly-col">✅</td><td>⚠️</td><td>❌</td><td>⚠️</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+                    <tr><td><span lang="id">Dashboard di POS</span><span lang="en">Dashboard on POS</span></td><td class="strukly-col">✅</td><td>✅</td><td>❌</td><td>⚠️</td><td>✅</td><td>⚠️</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+                    <tr><td><span lang="id">Pesan via QR</span><span lang="en">QR Order</span></td><td class="strukly-col">✅</td><td>✅</td><td>❌</td><td>⚠️</td><td>⚠️</td><td>✅</td><td>⚠️</td><td>✅</td><td>✅</td><td>✅</td></tr>
+                    <tr><td><span lang="id">Footer Nota JPEG</span><span lang="en">Footer Note JPEG</span></td><td class="strukly-col">✅</td><td>⚠️</td><td>❌</td><td>❌</td><td>⚠️</td><td>⚠️</td><td>⚠️</td><td>⚠️</td><td>⚠️</td><td>⚠️</td></tr>
+                    <tr><td><span lang="id">UI/UX Mudah & Gambar Menu</span><span lang="en">Friendly UI/UX & Menu Images</span></td><td class="strukly-col">✅</td><td>❌</td><td>⚠️</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
     <section class="testimoni-section" style="margin:44px 0 28px 0;text-align:center;">
       <h2 style="font-size:2em; font-weight:800; color:#24306b; margin-bottom:28px; letter-spacing:-1px;">
         <span lang="id">Kata Pengguna Kami</span>
         <span lang="en">What Our Users Say</span>
-      </h2>
+    </h2>
       <div id="testiSplide" class="splide" style="max-width:540px;margin:0 auto;">
         <div class="splide__track">
           <ul class="splide__list">
@@ -662,14 +781,14 @@
               </div>
             </li>
             <li class="splide__slide">
-                <div style="background:#fff; border-radius:13px; box-shadow:0 2px 14px #e2e9fa; padding:30px 22px;">
-                  <div style="font-size:1.13em; color:#1c2246; margin-bottom:10px;">
-                      <span lang="id">"Strukly sederhana namun powerful. Dukungan multi-outlet memudahkan pengelolaan toko kami yang sibuk."</span>
-                      <span lang="en">"Strukly is simple yet powerful. Multi-outlet support makes it easy to manage our busy stores."</span>
+                  <div style="background:#fff; border-radius:13px; box-shadow:0 2px 14px #e2e9fa; padding:30px 22px;">
+                    <div style="font-size:1.13em; color:#1c2246; margin-bottom:10px;">
+                        <span lang="id">"Strukly sederhana namun powerful. Dukungan multi-outlet memudahkan pengelolaan toko kami yang sibuk."</span>
+                        <span lang="en">"Strukly is simple yet powerful. Multi-outlet support makes it easy to manage our busy stores."</span>
+                    </div>
+                    <div style="font-weight:700; color:#2957b5;">Vapebay</div>
                   </div>
-                  <div style="font-weight:700; color:#2957b5;">Vapebay</div>
-                </div>
-              </li>
+                </li>
           </ul>
         </div>
       </div>
@@ -689,10 +808,10 @@
       <h2>
         <span lang="id">Pilih Paket Anda</span>
         <span lang="en">Choose Your Plan</span>
-    </h2>
+      </h2>
       <div class="plans">
         <div class="plan">
-          <h3>Basic</h3>
+          <h3>Starter</h3>
           <div class="plan-price-row">
             <span class="plan-currency">Rp</span>
             <span class="plan-price-main">250K</span>
@@ -723,12 +842,12 @@
             <li>Email Closing & Approval Via Email</li>
           </ul>
           <a href="https://buy.stripe.com/4gMbJ24Tk2WleOCbPGabK00" class="cta">
-            <span lang="id">Pilih Basic</span>
-            <span lang="en">Select Basic</span>
-        </a>
+            <span lang="id">Pilih Starter</span>
+            <span lang="en">Select Starter</span>
+          </a>
         </div>
         <div class="plan">
-          <h3>Advanced</h3>
+          <h3>Essential</h3>
           <div class="plan-price-row">
             <span class="plan-currency">Rp</span>
             <span class="plan-price-main">550K</span>
@@ -762,10 +881,10 @@
             <li>Full Feature Accounting / Invoicing</li>
             <li>Full Feature Manufacture</li>
           </ul>
-          <a href="YOUR_STRIPE_CHECKOUT_LINK_ADVANCED" class="cta">
-            <span lang="id">Pilih Advanced</span>
-            <span lang="en">Select Advanced</span>
-        </a>
+          <a href="YOUR_STRIPE_CHECKOUT_LINK_ESSENTIAL" class="cta">
+            <span lang="id">Pilih Essential</span>
+            <span lang="en">Select Essential</span>
+          </a>
         </div>
       </div>
     </section>
@@ -860,9 +979,9 @@
     <div class="links-below">
       <a href="/terms.html">
         <span lang="id">Syarat</span><span lang="en">Terms</span>
-    </a> • <a href="/privacy.html">
+      </a> • <a href="/privacy.html">
         <span lang="id">Privasi</span><span lang="en">Privacy</span>
-    </a>
+      </a>
     </div>
   </div>
 
@@ -925,10 +1044,10 @@
         const elementsId = document.querySelectorAll('[lang="id"]');
         
         if (lang === 'en') {
-            elementsEn.forEach(el => el.style.display = 'inline');
+            elementsEn.forEach(el => el.style.display = el.tagName === 'SPAN' ? 'inline' : 'block');
             elementsId.forEach(el => el.style.display = 'none');
         } else {
-            elementsId.forEach(el => el.style.display = 'inline');
+            elementsId.forEach(el => el.style.display = el.tagName === 'SPAN' ? 'inline' : 'block');
             elementsEn.forEach(el => el.style.display = 'none');
         }
 
@@ -983,7 +1102,7 @@
       switchLang('id');
 
       // Initialize Splide slider
-      if (window.Splide) {
+      if (window.Splide && document.getElementById('testiSplide')) {
         new Splide('#testiSplide', {
           type: 'loop',
           perPage: 1,
